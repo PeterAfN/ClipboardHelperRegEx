@@ -7,3 +7,65 @@ This program can automatically react when text changes in the Clipboard. It can 
 ## Usage
 
 ## License
+
+
+## Reasoning
+
+## Features
+
+## Built With
+
+## Author
+
+## Contributing
+Feel free to contribute.
+
+## Requirements
+
+## Prerequisites
+
+## How it Works
+
+## Instructions
+
+## How to use
+
+## Usage
+
+## Setting
+
+## Options
+
+## Example
+
+
+## Notes
+
+## Credits
+
+## Examples of use
+
+
+## Examples of use
+
+## Project status 
+
+## 
+
+## 
+
+## 
+
+## 
+
+## 
+
+## 
+
+## 
+
+## 
+
+## 
+
+## 
