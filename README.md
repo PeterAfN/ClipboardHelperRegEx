@@ -12,7 +12,8 @@ CLIPBOARD HELPER REGEX can automatically detect if text changes in Windows Clipb
 
 
 # Features
-Console Pasting - Paste commands to ANY other program. Also paste to any other Console Program such as Putty, MobaXterm, mRemoteNG with an alternative pasting method.
+## Console Pasting
+Paste commands to ANY other program. Also paste to any other Console Program such as Putty, MobaXterm, mRemoteNG with an alternative pasting method.
 
 ## None Intrusive
 Show program automatically only when needed. Place the windows anywhere, resize it, minimize, close or resize program internally.
@@ -53,14 +54,14 @@ Programmed in C#. Lightweight with very low CPU usage.
 GNU GENERAL PUBLIC LICENSE Version 3
 
 ## Requirements
--Windows 10.
--Microsoft Net framework 4.8
--Older Windows hasn't been tested, no support.
+- Windows 10.
+- Microsoft Net framework 4.8
+- Older Windows hasn't been tested, no support.
 
 ## Features
--Can select multiple lines of texts with Mouse, CTRL and SHIFT (as selecting files in Explorer). This can be ideal when pasting multiple commands to console windows with CTRL+V. 
--Shows which text is in Clipboard now.
--Automatically start upon Windows boot.
+- Can select multiple lines of texts with Mouse, CTRL and SHIFT (as selecting files in Explorer). This can be ideal when pasting multiple commands to console windows with CTRL+V. 
+- Shows which text is in Clipboard now.
+- Automatically start upon Windows boot.
 -Deactivate program. When deactivated it won't listen Clipboard for changes.
 -Main window can be automatically closed, minimized or remain visible after a text has been selected.
 -Set the number of seconds the main window remain visible after selecting a text in the list.
