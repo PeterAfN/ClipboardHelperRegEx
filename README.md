@@ -77,13 +77,13 @@
 - Has two different Tabs, "Auto" and "Manual". The Auto tab can't be renamed. The Manual tab can be renamed in the settings.
 - Auto tab can be shown by selecting it with the mouse, keyboard left arrow navigation key or when there is a RegEx match with the Clipboard.
 - Auto tab has navigation buttons so it's possible to go backwards in copy history. 
-- Manual tab can be shown by selecting it with the mouse or with the keyboard arrow navigation keys when main window is in focus.
+- Manual tabs can be shown by selecting it with the mouse or with the keyboard arrow navigation keys when main window is in focus.
 - All the saved Auto- and Manual tabs are saved in two settings files: AutoShownTabs.xml and ManuallyShownTabs.xml.
 - Ability to quickly replace the programs default AutoShownTabs.xml and ManuallyShownTabs.xml files with new files (in Advanced Settings).
 - Advanced ability to control if the replaced the AutoShownTabs.xml or ManuallyShownTabs.xml are valid. 
 - Ability to import csv files which data can be shown when program matches with clipboard (in Advanced Settings).
-- All lines are numbered.
-- All lines can be selected using the keyboard with keys 0-9.
+- All lines of selectable lists are numbered.
+- All lines of selectable lists can be selected by using the keyboard with keys 0-9.
 - A line selection can always be aborted by clicking the Escape key. 
 - When program system tray icon is left mouse clicked, all formatting is removed from the text currently in Clipboard.
 
