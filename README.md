@@ -130,7 +130,7 @@
 
 - [AdysTech.CredentialManager](https://github.com/AdysTech/CredentialManager) Version 1.9.1 [MIT License](https://github.com/AdysTech/CredentialManager/blob/master/License.md)
 
-- [csv](https://github.com/stevehansen/csv/) Version 1.0.38 [MIT License](https://github.com/stevehansen/csv/blob/master/LICENSE)
+- [Csv](https://github.com/stevehansen/csv/) Version 1.0.38 [MIT License](https://github.com/stevehansen/csv/blob/master/LICENSE)
 
 - [InputSimulator](https://github.com/michaelnoonan/inputsimulator) Version 1.0.4 [MIT License](https://github.com/michaelnoonan/inputsimulator/blob/master/LICENSE)
 
