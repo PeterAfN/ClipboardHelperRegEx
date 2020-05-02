@@ -126,7 +126,7 @@
   - copy after arrow -> G0-85-C2-B7-67-D5 	(not a valid MAC address, nothing happens)
 
 ## Installation
-- Download this the latest [Setup](https://github.com/PeterAfN/ClickOnceForClipboardRegexPaster/blob/master/publish/setup.exe?raw=true).
+- Download this [Setup](https://github.com/PeterAfN/ClickOnceForClipboardRegexPaster/blob/master/publish/setup.exe?raw=true) which is the latest.
 - Open (execute) the file and start installation of the program.
 - If Windows SmartScreen is shown: Bypass it by clicking "More Info" and click "Run anyway".
 - Click install when the new Security warning dialog appears.
