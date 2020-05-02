@@ -23,7 +23,7 @@
 - Show program automatically, only when needed. Place the windows anywhere, resize it, minimize it, close it or resize the program internally.
 
 ## Template texts
-![Demo](demo/TemplateTexts.gif)
+![Demo](demo/Template-texts.gif)
 - Store and organize template texts, easily reachable and easily selectable.
 
 ## Shortcut-keys
