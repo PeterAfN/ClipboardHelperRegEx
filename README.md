@@ -51,7 +51,7 @@
 - Programmed in C#. Lightweight with very low CPU usage.
 
 ## License
-GNU GENERAL PUBLIC LICENSE Version 3
+- GNU GENERAL PUBLIC LICENSE Version 3
 
 ## Requirements
 - Windows 10.
@@ -125,3 +125,37 @@ GNU GENERAL PUBLIC LICENSE Version 3
 ## Project status
 - No new features are been developed at this point.
 - Bugs are fixed.
+
+## This project includes code from these developers:
+
+- [AdysTech.CredentialManager](https://github.com/AdysTech/CredentialManager)
+- Version 1.9.1
+- [License: MIT License](https://github.com/AdysTech/CredentialManager/blob/master/License.md)
+
+- [csv](https://github.com/stevehansen/csv/)
+- Version 1.0.38
+- [License: MIT License](https://github.com/stevehansen/csv/blob/master/LICENSE)
+
+- [InputSimulator](https://github.com/michaelnoonan/inputsimulator)
+- Version 1.0.4
+- [License: MIT License](https://github.com/michaelnoonan/inputsimulator/blob/master/LICENSE)
+
+- [MetroModernUI](https://github.com/dennismagno/metroframework-modern-ui)
+- Version 1.4.0
+- [License: MIT License](https://github.com/dennismagno/metroframework-modern-ui/blob/master/LICENSE.md)
+
+- [MouseKeyHook](https://github.com/gmamaladze/globalmousekeyhook)
+- Version 5.6.0
+- [License: MIT License](https://github.com/gmamaladze/globalmousekeyhook/blob/vNext/LICENSE.txt)
+
+- [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json)
+- Version 12.0.3
+- [License: MIT License](https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md)
+
+- [NHotkey](https://github.com/thomaslevesque/NHotkey)
+- Version 2.0.0
+- [License: Apache License 2.0](https://github.com/thomaslevesque/NHotkey/blob/master/LICENSE.md)
+
+- [NHotkey.WindowsForms](https://github.com/thomaslevesque/NHotkey)
+- Version 2.0.0
+- [License: Apache License 2.0](https://github.com/thomaslevesque/NHotkey/blob/master/LICENSE.md)
