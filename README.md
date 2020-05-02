@@ -1,7 +1,7 @@
 # ClipboardHelperRegEx
 ## Why use Clipboard Helper RegEx
 - When repetative copying and pasting is needed between different programs in Windows.
-- When there is a need of automated manipulation of the copied text to the Clipboard. 
+- When there is a need of automated manipulation of copied text to Clipboard and pasted text from Clipboard. 
 - Instead of having template texts on Notepad or another text editor, this program can more easily select them and more easily paste them.
 
 ## How the program works
@@ -49,6 +49,10 @@
 ## Import CSV files
 ![Demo](demo/ImportCSVFiles.gif)
 - Import CSV formatted files and retrieve its data.
+
+## Settings window
+![Demo](demo/SettingsWindow.gif)
+- Quick view of different settings
 
 ## Auto start
 - Start automatically upon Windows boot.
@@ -132,7 +136,8 @@
 - Peter Palosaari
 
 ## Project status
-- No new features are been developed at this point.
+- No new features are developed at this point.
+- Considered beta.
 - Bugs are fixed.
 
 ## This program uses code from these projects:
