@@ -126,27 +126,20 @@
 - No new features are been developed at this point.
 - Bugs are fixed.
 
-## This project includes code from these projexts:
+## This project includes code from these projects:
 
-- [AdysTech.CredentialManager](https://github.com/AdysTech/CredentialManager) Version 1.9.1
-- [MIT License](https://github.com/AdysTech/CredentialManager/blob/master/License.md)
+- [AdysTech.CredentialManager](https://github.com/AdysTech/CredentialManager) Version 1.9.1 [MIT License](https://github.com/AdysTech/CredentialManager/blob/master/License.md)
 
-- [csv](https://github.com/stevehansen/csv/) Version 1.0.38
-- [MIT License](https://github.com/stevehansen/csv/blob/master/LICENSE)
+- [csv](https://github.com/stevehansen/csv/) Version 1.0.38 [MIT License](https://github.com/stevehansen/csv/blob/master/LICENSE)
 
-- [InputSimulator](https://github.com/michaelnoonan/inputsimulator) Version 1.0.4
-- [MIT License](https://github.com/michaelnoonan/inputsimulator/blob/master/LICENSE)
+- [InputSimulator](https://github.com/michaelnoonan/inputsimulator) Version 1.0.4 [MIT License](https://github.com/michaelnoonan/inputsimulator/blob/master/LICENSE)
 
-- [MetroModernUI](https://github.com/dennismagno/metroframework-modern-ui) Version 1.4.0
-- [MIT License](https://github.com/dennismagno/metroframework-modern-ui/blob/master/LICENSE.md)
+- [MetroModernUI](https://github.com/dennismagno/metroframework-modern-ui) Version 1.4.0 [MIT License](https://github.com/dennismagno/metroframework-modern-ui/blob/master/LICENSE.md)
 
-- [MouseKeyHook](https://github.com/gmamaladze/globalmousekeyhook) Version 5.6.0
-- [MIT License](https://github.com/gmamaladze/globalmousekeyhook/blob/vNext/LICENSE.txt)
+- [MouseKeyHook](https://github.com/gmamaladze/globalmousekeyhook) Version 5.6.0 [MIT License](https://github.com/gmamaladze/globalmousekeyhook/blob/vNext/LICENSE.txt)
 
-- [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json) Version 12.0.3
-- [MIT License](https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md)
+- [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json) Version 12.0.3 [MIT License](https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md)
 
-- [NHotkey](https://github.com/thomaslevesque/NHotkey) Version 2.0.0
-- [Apache License 2.0](https://github.com/thomaslevesque/NHotkey/blob/master/LICENSE.md)
+- [NHotkey](https://github.com/thomaslevesque/NHotkey) Version 2.0.0 [Apache License 2.0](https://github.com/thomaslevesque/NHotkey/blob/master/LICENSE.md)
 
 - [NHotkey.WindowsForms](https://github.com/thomaslevesque/NHotkey) Version 2.0.0 [Apache License 2.0](https://github.com/thomaslevesque/NHotkey/blob/master/LICENSE.md)
