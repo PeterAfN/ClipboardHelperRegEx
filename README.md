@@ -6,25 +6,25 @@
 
 ## How the program works
 ![Demo](demo/demo.gif)
-- Can monitor Windows Clipboard for changes.
-- If there is a new text in the Clipboard, the program tries to match the Clipboard text with a list of predefined (Reg)ular (Ex)pressions.
+- Monitors Windows Clipboard for changes.
+- If new text in Clipboard, it tries to match the Clipboard text with a list of predefined (Reg)ular (Ex)pressions.
 - If any of the defined RegEx can match the new text in the Clipboard, a list of predefined selectable texts is shown. 
 - When line(s) of text in the list is/are selected, it's copied to the Clipboard where it can be pasted to other programs.
 - Every list has a specific Regular Expression that determines when that specific list is shown.
-- If the program can't match any RegEx with a new text in Clipboard, then nothing happens.
+- If program can't match any RegEx with a new text in Clipboard, then nothing happens.
 
 # Features
 ## Console Pasting
 - Paste commands to ANY other program. Also paste to any other Console Program such as Putty, MobaXterm, mRemoteNG with an alternative pasting method.
 
 ## None Intrusive
-- Show program automatically only when needed. Place the windows anywhere, resize it, minimize, close or resize program internally.
+- Show program automatically, only when needed. Place the windows anywhere, resize it, minimize it, close it or resize the program internally.
 
 ## Template texts
 - Store and organize template texts, easily reachable and easily selectable.
 
 ## Shortcut-keys
-- Show window with Shortcut-keys. Keys can be changed in the settings.
+- Show program with Shortcut-keys. Keys can be changed in the settings.
 
 ## History navigation
 - Navigate back and forward in History to find old copied texts.
@@ -126,7 +126,7 @@
 - No new features are been developed at this point.
 - Bugs are fixed.
 
-## This project includes code from these projects:
+## This program uses code from these projects:
 
 - [AdysTech.CredentialManager](https://github.com/AdysTech/CredentialManager) Version 1.9.1 [MIT License](https://github.com/AdysTech/CredentialManager/blob/master/License.md)
 
