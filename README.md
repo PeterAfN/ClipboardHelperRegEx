@@ -50,14 +50,12 @@
 ## Lightweight
 - Programmed in C#. Lightweight with very low CPU usage.
 
-## Settings overview
-
 ## License
 GNU GENERAL PUBLIC LICENSE Version 3
 
 ## Requirements
 - Windows 10.
-- Microsoft Net framework 4.8
+- Microsoft Net framework 4.8. (Should be downloaded automatically upon installation if needed)
 - Older Windows hasn't been tested, no support.
 
 ## Features
@@ -99,11 +97,11 @@ GNU GENERAL PUBLIC LICENSE Version 3
   - "Switch"
 
 - To test Auto tabs, please copy the following text with CTRL+C or right click with the mouse and select copy.
-  - copy after arrow ->```   10.33.23.42 port1/0/15    ```
-  - copy after arrow -> ```   17.31.0.213 port0/0/5   ```
-  - copy after arrow -> ```      17.31.0.213      ```
+  - copy after arrow -> 10.33.23.42 port1/0/15
+  - copy after arrow -> 17.31.0.213 port0/0/5
+  - copy after arrow -> 17.31.0.213
   - copy after arrow -> 171.31.0.213
-  - copy after arrow -> ```35.31.0.213```
+  - copy after arrow -> 35.31.0.213
   - copy after arrow -> 53.31.0.213
   - copy after arrow -> 53.31.1.256		(not a valid IP address, nothing happens)
   - copy after arrow -> 10.2.0.1
@@ -115,7 +113,7 @@ GNU GENERAL PUBLIC LICENSE Version 3
   - copy after arrow -> G0-85-C2-B7-67-D5 	(not a valid MAC address, nothing happens)
 
 ## Installation
-- Download the latest Setup file from https://github.com/PeterAfN/ClickOnceForClipboardRegexPaster/blob/master/publish/setup.exe?raw=true
+- Download the latest [Setup](https://github.com/PeterAfN/ClickOnceForClipboardRegexPaster/blob/master/publish/setup.exe?raw=true) file from 
 - Open (execute) the file.
 - Bypass Windows SmartScreen by clicking "More Info" and click "Run anyway".
 - Click install when the new Security warning dialog appears.
