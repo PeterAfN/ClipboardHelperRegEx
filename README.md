@@ -2,7 +2,7 @@
 ## Why use Clipboard Helper RegEx
 - When repetative copying and pasting is needed between different programs in Windows.
 - When there is a need of automated manipulation of the copied text to the Clipboard. 
-- Instead of having template texts on Notepad or another text editor, this program can have them easily selectable and easy to paste.
+- Instead of having template texts on Notepad or another text editor, this program can more easily select them and more easily paste them.
 
 ## How the program works
 ![Demo](demo/demo.gif)
@@ -113,9 +113,9 @@ GNU GENERAL PUBLIC LICENSE Version 3
   - copy after arrow -> G0-85-C2-B7-67-D5 	(not a valid MAC address, nothing happens)
 
 ## Installation
-- Download the latest [Setup](https://github.com/PeterAfN/ClickOnceForClipboardRegexPaster/blob/master/publish/setup.exe?raw=true).
+- Download this latest [Setup](https://github.com/PeterAfN/ClickOnceForClipboardRegexPaster/blob/master/publish/setup.exe?raw=true).
 - Open (execute) the file and start installation of the program.
-- If shown: Bypass Windows SmartScreen by clicking "More Info" and click "Run anyway".
+- If Windows SmartScreen is shown: Bypass it by clicking "More Info" and click "Run anyway".
 - Click install when the new Security warning dialog appears.
 - Done!
 
