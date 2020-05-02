@@ -99,7 +99,7 @@ GNU GENERAL PUBLIC LICENSE Version 3
   - "Switch"
 
 - To test Auto tabs, please copy the following text with CTRL+C or right click with the mouse and select copy.
-  - copy after arrow -> ```10.33.23.42 port1/0/15```
+  - copy after arrow ->``` 10.33.23.42 port1/0/15 ```
   - copy after arrow -> ```17.31.0.213 port0/0/5```
   - copy after arrow -> 17.31.0.213
   - copy after arrow -> 171.31.0.213
@@ -122,7 +122,7 @@ GNU GENERAL PUBLIC LICENSE Version 3
 - Done!
 
 ## Developer
-Peter Palosaari
+- Peter Palosaari
 
 ## Project status
 - No new features are been developed at this point.
