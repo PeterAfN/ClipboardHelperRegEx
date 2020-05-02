@@ -5,7 +5,7 @@
 - Instead of having template texts on Notepad or another text editor, this program can more easily select them and more easily paste them.
 
 ## How the program works
-![Demo](demo/demo.gif)
+![Demo](demo/HowTheProgramWorks.gif)
 - Monitors Windows Clipboard for changes.
 - If new text in Clipboard, it tries to match the Clipboard text with a list of predefined (Reg)ular (Ex)pressions.
 - If any of the defined RegEx can match the new text in the Clipboard, a list of predefined selectable texts is shown. 
@@ -15,30 +15,39 @@
 
 # Features
 ## Console Pasting
+![Demo](demo/ConsolePasting.gif)
 - Paste commands to ANY other program. Also paste to any other Console Program such as Putty, MobaXterm, mRemoteNG with an alternative pasting method.
 
 ## None Intrusive
+![Demo](demo/NoneIntrusive.gif)
 - Show program automatically, only when needed. Place the windows anywhere, resize it, minimize it, close it or resize the program internally.
 
 ## Template texts
+![Demo](demo/TemplateTexts.gif)
 - Store and organize template texts, easily reachable and easily selectable.
 
 ## Shortcut-keys
+![Demo](demo/Shortcut-keys.gif)
 - Show program with Shortcut-keys. Keys can be changed in the settings.
 
 ## History navigation
+![Demo](demo/HistoryNavigation.gif)
 - Navigate back and forward in History to find old copied texts.
 
 ## Open Web Browser automatically
+![Demo](demo/OpenWebBrowserAutomatically.gif)
 - Open your default Web Browser automatically and open Web Pages automatically.
 
 ## Open PowerShell and execute commands
+![Demo](demo/OpenPowerShellAndExecuteCommands.gif)
 - Open PowerShell console automatically and execute commands.
 
 ## Retrieve Json data
+![Demo](demo/RetrieveJsonData.gif)
 - Automatically retrieve and show Json data.
 
 ## Import CSV files
+![Demo](demo/ImportCSVFiles.gif)
 - Import CSV formatted files and retrieve its data.
 
 ## Auto start
@@ -113,7 +122,7 @@
   - copy after arrow -> G0-85-C2-B7-67-D5 	(not a valid MAC address, nothing happens)
 
 ## Installation
-- Download this latest [Setup](https://github.com/PeterAfN/ClickOnceForClipboardRegexPaster/blob/master/publish/setup.exe?raw=true).
+- Download this the latest [Setup](https://github.com/PeterAfN/ClickOnceForClipboardRegexPaster/blob/master/publish/setup.exe?raw=true).
 - Open (execute) the file and start installation of the program.
 - If Windows SmartScreen is shown: Bypass it by clicking "More Info" and click "Run anyway".
 - Click install when the new Security warning dialog appears.
