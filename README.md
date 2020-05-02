@@ -30,7 +30,7 @@
 - Navigate back and forward in History to find old copied texts.
 
 ## Open Web Browser automatically
-- Open your default Web Browser automatically and open Wep Pages automatically.
+- Open your default Web Browser automatically and open Web Pages automatically.
 
 ## Open PowerShell and execute commands
 - Open PowerShell console automatically and execute commands.
@@ -98,21 +98,21 @@ GNU GENERAL PUBLIC LICENSE Version 3
   - "Mac Address"
   - "Switch"
 
-- To test these Auto tabs, please copy the following text with CTRL+C or right click with the mouse and select copy.
-	copy after arrow -> '10.33.23.42 port1/0/15'
-	copy after arrow -> ´17.31.0.213 port0/0/5´
-	copy after arrow -> 17.31.0.213
-	copy after arrow -> 171.31.0.213
-	copy after arrow -> 35.31.0.213
-	copy after arrow -> 53.31.0.213
-	copy after arrow -> 53.31.1.256		(not a valid IP address, nothing happens)
-	copy after arrow -> 10.2.0.1
-	copy after arrow -> 172.16.0.0
-	copy after arrow -> 192.168.0.0
-	copy after arrow -> b8:8d:12:3b0A80
-	copy after arrow -> 00000ABB28FC
-	copy after arrow -> 70-85-C2-B7-67-D5
-	copy after arrow -> G0-85-C2-B7-67-D5 	(not a valid MAC address, nothing happens)
+- To test Auto tabs, please copy the following text with CTRL+C or right click with the mouse and select copy.
+  - copy after arrow -> ```10.33.23.42 port1/0/15```
+  - copy after arrow -> ```17.31.0.213 port0/0/5```
+  - copy after arrow -> 17.31.0.213
+  - copy after arrow -> 171.31.0.213
+  - copy after arrow -> ```35.31.0.213```
+  - copy after arrow -> 53.31.0.213
+  - copy after arrow -> 53.31.1.256		(not a valid IP address, nothing happens)
+  - copy after arrow -> 10.2.0.1
+  - copy after arrow -> 172.16.0.0
+  - copy after arrow -> 192.168.0.0
+  - copy after arrow -> b8:8d:12:3b0A80
+  - copy after arrow -> 00000ABB28FC
+  - copy after arrow -> 70-85-C2-B7-67-D5
+  - copy after arrow -> G0-85-C2-B7-67-D5 	(not a valid MAC address, nothing happens)
 
 ## Installation
 - Download the latest Setup file from https://github.com/PeterAfN/ClickOnceForClipboardRegexPaster/blob/master/publish/setup.exe?raw=true
