@@ -1,5 +1,7 @@
 # ClipboardHelperRegEx
-CLIPBOARD HELPER REGEX can automatically detect if text changes in Windows Clipboard. It can display a list of selectable texts depending on which new text is in the Clipboard. The selected text is then automatically set in to the Clipboard for pasting later. Regular expressions are used to match specific new text content in the Clipboard with a specific list.
+## Why use Clipboard Helper RegEx
+- When repetative copying and pasting is needed between different programs in Windows.
+- Instead of having template texts on Notepad or a text editor, this program can have them easily selectable and easy to paste.
 
 # How the program works
 ![Demo](demo/demo.gif)
@@ -10,15 +12,11 @@ CLIPBOARD HELPER REGEX can automatically detect if text changes in Windows Clipb
 - Every list has a specific Regular Expression that determines when that specific list is shown.
 - If the program can't match any RegEx with a new text in Clipboard, then nothing happens.
 
-## Why use this
-- When repetative copying and pasting is needed between different programs in Windows.
-- Instead of having template texts on Notepad or a text editor, this program can have them easily selectable and easy to paste.
-
 # Features
 ## Console Pasting
 Paste commands to ANY other program. Also paste to any other Console Program such as Putty, MobaXterm, mRemoteNG with an alternative pasting method.
 
-## None Intrusive
+### None Intrusive
 - Show program automatically only when needed. Place the windows anywhere, resize it, minimize, close or resize program internally.
 
 ## Template texts
