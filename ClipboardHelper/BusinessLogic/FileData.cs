@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Text;
+using System.Windows.Forms;
 
 namespace ClipboardHelperRegEx.BusinessLogic
 {
@@ -49,7 +50,9 @@ namespace ClipboardHelperRegEx.BusinessLogic
         private void CreateFilePaths()
         {
             AppDataFilePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            MessageBox.Show("AppDataFilePath=" + AppDataFilePath);
             ExeFilePath = Path.Combine(AppDataFilePath, AssemblyInformation.AssemblyTitle);
+            MessageBox.Show("ExeFilePath=" + ExeFilePath);
         }
     }
 }
