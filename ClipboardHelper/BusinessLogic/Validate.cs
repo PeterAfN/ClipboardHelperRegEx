@@ -76,13 +76,13 @@ namespace ClipboardHelperRegEx.BusinessLogic
         }
         private static void DataFilesIncludedFromStart()
         {
-            if (!FirstRunEver) return;
+            
             AppDataFilePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData); //_appDataFilePath	"C:\\Users\\****\\AppData\\Local"
             ExeFilePath = Path.Combine(AppDataFilePath, AssemblyInformation.AssemblyTitle);  //_exeFilePath	"C:\\Users\\****\\AppData\\Local\\ClipboardHelperRegEx"
             var macVendorSourceFilePath = Path.Combine(Application.StartupPath, @"Resources\" + "macvendor.csv");
             var macVendorDestFilePath = Path.Combine(ExeFilePath, "macvendor.csv");
-            if (!File.Exists(macVendorDestFilePath))
-                File.Copy(macVendorSourceFilePath, macVendorDestFilePath, true);
+            if (File.Exists(macVendorDestFilePath)) return;
+            File.Copy(macVendorSourceFilePath, macVendorDestFilePath, true);
         }
 
         private string _files = string.Empty;

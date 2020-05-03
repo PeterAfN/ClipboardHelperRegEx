@@ -37,11 +37,11 @@
     <ProductName>ClipboardHelperRegEx</ProductName>
     <PublisherName>Peter Palosaari</PublisherName>
     <SuiteName>ClipboardHelperRegEx</SuiteName>
-    <MinimumRequiredVersion>0.0.0.3</MinimumRequiredVersion>
+    <MinimumRequiredVersion>0.0.0.4</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>3</ApplicationRevision>
-    <ApplicationVersion>0.0.0.3</ApplicationVersion>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>0.0.0.4</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
