@@ -145,7 +145,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
         private void UiKeyNavigation_OnAnyDigitKeyUp(object sender, EventArgs e)
         {
             var index = ListboxSelected.SelectedIndex;
-            if (index == -1) return;
+            //if (index == -1) return;
             ListboxSelected.SelectedIndices.Remove(index);
             _listboxMultiSelection.HandleKeyUp(index);
         }
@@ -153,7 +153,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
         private void UiKeyNavigation_OnNavigationUp(object sender, EventArgs e)
         {
             var index = ListboxSelected.SelectedIndex - 1;
-            if (index == -2) return;
+            //if (index == -2) return;
             ListboxSelected.SelectedIndices.Remove(index + 1);
             if (ListboxSelected.SelectedItems.Count > 1) ListboxSelected.ClearSelected();
             _listboxMultiSelection.HandleKeyUp(index);
@@ -162,7 +162,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
         private void UiKeyNavigation_OnNavigationDown(object sender, EventArgs e)
         {
             var index = ListboxSelected.SelectedIndex + 1;
-            if (index == 0) return;
+            //if (index == 0) return;
             ListboxSelected.SelectedIndices.Remove(index - 1);
             if (ListboxSelected.SelectedItems.Count > 1) ListboxSelected.ClearSelected();
             _listboxMultiSelection.HandleKeyUp(index);
@@ -302,7 +302,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                 Pasting_MultiPastingDeactivated(sender, PastingDeactivatedEventArgs.Empty);
             _pasting?.Cancel();
             ListboxSelected = null;
-            if (_view.TabControl.SelectedIndex != -1)
+            //if (_view.TabControl.SelectedIndex != -1)
                 if (_view.TabControl.SelectedIndex == 0)
                 {
                     if (_listBoxAuto != null)
