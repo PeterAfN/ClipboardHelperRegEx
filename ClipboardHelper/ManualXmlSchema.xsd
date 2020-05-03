@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified">
+
+  <xsd:element name="ManuallyShownTabs" type="ManuallyShownTabs"/>
+
+  <xsd:complexType name="ManuallyShownTabs">
+    <xsd:sequence minOccurs="1" maxOccurs="1">
+      <xsd:element name="List"  type="ListType" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ListType">
+    <xsd:sequence minOccurs="1" maxOccurs="50" >
+      <xsd:element name="ManuallyShownTab" type="ManuallyShownTabType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ManuallyShownTabType">
+    <xsd:sequence>
+      <xsd:element name="Name"  type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="Lines" type="LinesType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="LinesType">
+    <xsd:sequence minOccurs="1" maxOccurs="10000">
+      <xsd:element name="string"  type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>

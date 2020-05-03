@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoShownTabs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <List>
+    <AutoShownTab>
+      <Name>Ip Address-All Not Private</Name>
+      <RegEx>^\b(?!(10|172\.(1[6-9]|2[0-9]|3[0-2])|192\.168))(?:(?:2(?:[0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9])\.){3}(?:(?:2([0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9]))\b$</RegEx>
+      <Items>
+        <string>Info(Public, none private ip address) Clipboard()      NotSelectableLine()</string>
+        <string>    NotSelectableLine()</string>
+        <string>Caption(Connection)       NotSelectableLine()</string>
+        <string>Info(Telnet) telnet Clipboard()</string>
+        <string>Info(SSH) ssh Clipboard()</string>
+        <string>Info(Ping) ping Clipboard()</string>
+        <string>    NotSelectableLine()</string>
+        <string>Caption(Json data from https://api.ipdata.co/Clipboard()?api-key=test )       NotSelectableLine()</string>
+        <string>Info(ip) WebGetJason(   https://api.ipdata.co/Clipboard()?api-key=test   ;   ip   ;   toLowerCase   ) </string>
+        <string>Info(country_name) WebGetJason(   https://api.ipdata.co/Clipboard()?api-key=test   ;   country_name   ;   toLowerCase   ) </string>
+        <string>Info(continent_code) WebGetJason(   https://api.ipdata.co/Clipboard()?api-key=test   ;   continent_code   ;   toLowerCase   ) </string>
+        <string>Info(latitude)  WebGetJason(   https://api.ipdata.co/Clipboard()?api-key=test   ;   latitude   ;   toLowerCase   ) </string>
+        <string>Info(longitude)  WebGetJason(   https://api.ipdata.co/Clipboard()?api-key=test   ;   longitude   ;   toLowerCase   ) </string>
+        <string>Info(time_zone.name)  WebGetJason(   https://api.ipdata.co/Clipboard()?api-key=test   ;   time_zone.name   ;   toLowerCase   ) </string>
+        <string>Info(time_zone.current_time)  WebGetJason(   https://api.ipdata.co/Clipboard()?api-key=test   ;   time_zone.current_time   ;   toLowerCase   ) </string>
+        <string>Info(threat.is_tor)  WebGetJason(   https://api.ipdata.co/Clipboard()?api-key=test   ;   threat.is_tor   ;   toLowerCase   ) </string>
+        <string>Info(threat.is_proxy)  WebGetJason(   https://api.ipdata.co/Clipboard()?api-key=test   ;   threat.is_proxy   ;   toLowerCase   ) </string>
+        <string>Info(threat.is_anonymous)  WebGetJason(   https://api.ipdata.co/Clipboard()?api-key=test   ;   threat.is_anonymous   ;   toLowerCase   ) </string>
+        <string>Info(threat.is_known_attacker)  WebGetJason(   https://api.ipdata.co/Clipboard()?api-key=test   ;   threat.is_known_attacker   ;   toLowerCase   ) </string>
+        <string>Info(threat.is_known_abuser)  WebGetJason(   https://api.ipdata.co/Clipboard()?api-key=test   ;   threat.is_known_abuser   ;   toLowerCase   ) </string>
+        <string>Info(threat.is_threat)  WebGetJason(   https://api.ipdata.co/Clipboard()?api-key=test   ;   threat.is_threat   ;   toLowerCase   ) </string>
+        <string>Info(threat.is_bogon)  WebGetJason(   https://api.ipdata.co/Clipboard()?api-key=test   ;   threat.is_bogon   ;   toLowerCase   ) </string>
+        <string />
+        <string>To add more commands here, please go to the Settings by right    NotSelectableLine()</string>
+        <string>clicking the program icon in the system tray and select "Settings".   NotSelectableLine()</string>
+        <string />
+      </Items>
+      <SimulatedClipboard>179.8.4.41</SimulatedClipboard>
+    </AutoShownTab>
+    <AutoShownTab>
+      <Name>Ip Address-Class A Private</Name>
+      <RegEx>^(10)(.([2][0-5][0-5]|[1][0-9][0-9]|[1-9][0-9]|[0-9])){3}$</RegEx>
+      <Items>
+        <string>Info(Private, Class A IP address, in range 10.0.0.0 – 10.255.255.255) Clipboard()</string>
+      </Items>
+      <SimulatedClipboard>10.255.1.255</SimulatedClipboard>
+    </AutoShownTab>
+    <AutoShownTab>
+      <Name>Ip Address-Class B Private</Name>
+      <RegEx>^(172).(1[6-9]|2[0-9]|3[0-1])(.([2][0-5][0-5]|[1][0-9][0-9]|[1-9][0-9]|[0-9])){2}$</RegEx>
+      <Items>
+        <string>Info(Private, Class B IP address, in range 172.16.0.0 – 172.31.255.255) Clipboard()</string>
+      </Items>
+      <SimulatedClipboard>172.16.0.255</SimulatedClipboard>
+    </AutoShownTab>
+    <AutoShownTab>
+      <Name>Ip Address-Class C Private</Name>
+      <RegEx>^(192).(168)(.([2][0-5][0-5]|[1][0-9][0-9]|[1-9][0-9]|[0-9])){2}</RegEx>
+      <Items>
+        <string>Info(Private, Class C IP address, in range 192.168.0.0 – 192.168.255.255) Clipboard()</string>
+      </Items>
+      <SimulatedClipboard>192.168.0.0</SimulatedClipboard>
+    </AutoShownTab>
+    <AutoShownTab>
+      <Name>Mac Address</Name>
+      <RegEx>^([a-fA-F0-9]{2}[:_;\-. ,]?){5}[a-fA-F0-9]{2}\b$</RegEx>
+      <Items>
+        <string>Caption(Original format)   NotSelectableLine()</string>
+        <string>Clipboard()</string>
+        <string>   NotSelectableLine()</string>
+        <string>Caption(Transformation to different formats) NotSelectableLine()</string>
+        <string>RegexReplace(   RegexReplace([:_/;\-. ,] ; )   ;   (.{2})(.{2})(.{2})(.{2})(.{2})(.{2})   ;   $1:$2:$3:$4:$5:$6   )</string>
+        <string>RegexReplace(   RegexReplace([:_/;\-. ,] ; )   ;   (.{2})(.{2})(.{2})(.{2})(.{2})(.{2})   ;   $1$2.$3$4.$5$6   )</string>
+        <string>RegexReplace(   RegexReplace([:_/;\-. ,] ; )   ;   (.{2})(.{2})(.{2})(.{2})(.{2})(.{2})   ;   $1$2-$3$4-$5$6   )</string>
+        <string>RegexReplace(   RegexReplace([:_/;\-. ,] ; )   ;   (.{2})(.{2})(.{2})(.{2})(.{2})(.{2})   ;   $1.$2.$3.$4.$5.$6   )</string>
+        <string>RegexReplace([:_/;\-. ,] ; )</string>
+        <string>   NotSelectableLine()</string>
+        <string>Caption(Other related stuff)   NotSelectableLine()</string>
+        <string>Info(Vendor ID-Local file search) RegexCsvFileGet(   macvendor.csv   ;   Regex(RegexReplace([:_/;\-. ,];); ^\S{6})   ;   true   )</string>
+        <string>Info(Vendor ID-Online search) WebGet(https://api.macvendors.com/RegexReplace([:_/;\-. ,] ;) )    </string>
+        <string>Info(Open link in web browser -&gt;)  https://api.macvendors.com/RegexReplace([:_/;\-. ,] ;) </string>
+        <string>Info(Huawei switch-Find mac) disp mac-address | include RegexReplace(   RegexReplace([:_/;\-. ,] ; )   ;   (.{2})(.{2})(.{2})(.{2})(.{2})(.{2})   ;   $1$2-$3$4-$5$6   )</string>
+        <string>Info(Huawei switch-Get mac Interface 0/0/X) display mac-address GigabitEthernet 0/0/X</string>
+        <string>Info(Run power shell with commands -&gt;) echo "This computers mac addresses:"; getmac ConsoleOpen(echo "This computers mac addresses:"; getmac;)</string>
+        <string>   NotSelectableLine()</string>
+        <string>To add more commands here, please go to the Settings by right    NotSelectableLine()</string>
+        <string>clicking the program icon in the system tray and select "Settings".   NotSelectableLine()</string>
+      </Items>
+      <SimulatedClipboard>b8:8d:12:3b0A80</SimulatedClipboard>
+    </AutoShownTab>
+    <AutoShownTab>
+      <Name>Switch</Name>
+      <RegEx>^(\d{1,3}\.){3}\d{1,3} port\d/\d/\d\d?$</RegEx>
+      <Items>
+        <string>Info(UniqueSwitchAndPortIdentifier) Regex(^(\d{1,3}\.){3}\d{1,3} port\d/\d/)ChangeableContent(Regex(   (?&lt;=\b^(\d{1,3}\.){3}\d{1,3} port\d/\d/)\w+\b   ))</string>
+        <string>NotSelectableLine()</string>
+        <string>Caption(Access switch)    NotSelectableLine()</string>
+        <string>Info(Connect) ssh Regex(^(\d{1,3}\.){3}\d{1,3})</string>
+        <string>Info(Password stored in Windows Credentials Manager) Password()</string>
+        <string> NotSelectableLine()</string>
+        <string>Caption(Port Regex((?&lt;=(\d{1,3}\.){3}\d{1,3} port)\d/\d/))ChangeableContent(Regex(   (?&lt;=\b^(\d{1,3}\.){3}\d{1,3} port\d/\d/)\w+\b   ))    NotSelectableLine()</string>
+        <string>Info(Status) display interface GigabitEthernet Regex((?&lt;=(\d{1,3}\.){3}\d{1,3} port)\d/\d/)ChangeableContent(Regex(   (?&lt;=\b^(\d{1,3}\.){3}\d{1,3} port\d/\d/)\w+\b   )) | include GigabitEthernet|Line protocol|Speed|Duplex|Input:|Total Error:|Output:|Total Error:|Input bandwidth utilization  :|Output bandwidth utilization :</string>
+        <string>Info(Log) display logbuffer | include Regex((?&lt;=(\d{1,3}\.){3}\d{1,3} port)\d/\d/)ChangeableContent(Regex(   (?&lt;=\b^(\d{1,3}\.){3}\d{1,3} port\d/\d/)\w+\b   )) </string>
+        <string>Info(Light) display transceiver interface GigabitEthernet Regex((?&lt;=(\d{1,3}\.){3}\d{1,3} port)\d/\d/)ChangeableContent(Regex(   (?&lt;=\b^(\d{1,3}\.){3}\d{1,3} port\d/\d/)\w+\b   )) verbose</string>
+        <string>Info(Devices IP) display dhcp snooping user-bind interface GigabitEthernet Regex((?&lt;=(\d{1,3}\.){3}\d{1,3} port)\d/\d/)ChangeableContent(Regex(   (?&lt;=\b^(\d{1,3}\.){3}\d{1,3} port\d/\d/)\w+\b   ))</string>
+        <string>Info(Devices Connected) display mac-address GigabitEthernet Regex((?&lt;=(\d{1,3}\.){3}\d{1,3} port)\d/\d/)ChangeableContent(Regex(   (?&lt;=\b^(\d{1,3}\.){3}\d{1,3} port\d/\d/)\w+\b   ))</string>
+        <string>Info(Counters) display counters interface GigabitEthernet Regex((?&lt;=(\d{1,3}\.){3}\d{1,3} port)\d/\d/)ChangeableContent(Regex(   (?&lt;=\b^(\d{1,3}\.){3}\d{1,3} port\d/\d/)\w+\b   ))</string>
+        <string>Info(Config) display current-configuration interface GigabitEthernet Regex((?&lt;=(\d{1,3}\.){3}\d{1,3} port)\d/\d/)ChangeableContent(Regex(   (?&lt;=\b^(\d{1,3}\.){3}\d{1,3} port\d/\d/)\w+\b   ))</string>
+        <string>Info(Configure) system-viewNewLine()interface GigabitEthernet Regex((?&lt;=(\d{1,3}\.){3}\d{1,3} port)\d/\d/)ChangeableContent(Regex(   (?&lt;=\b^(\d{1,3}\.){3}\d{1,3} port\d/\d/)\w+\b   )) NewLine()</string>
+        <string>  NotSelectableLine()</string>
+        <string>Caption(Port 1-24)    NotSelectableLine()</string>
+        <string>Info(Description) display interface description</string>
+        <string>Info(Status) display interface brief</string>
+        <string>Info(Devices IP) display dhcp snooping user-bind all</string>
+        <string>Info(Devices Connected) disp mac-address | exclude XGE</string>
+        <string>Info(Counters same stack) display igmp-snooping port-info | include )  GERegex(((?&lt;=(\d{1,3}\.){3}\d{1,3} port)\d))/0/|GERegex((?&lt;=(\d{1,3}\.){3}\d{1,3} port)\d/\d/\d?\d?)</string>
+        <string>Info(Counters) display igmp-snooping port-info | exclude port|VLAN|XGE</string>
+        <string>Info(Log) display logbuffer</string>
+        <string>Info(Time) display clock</string>
+        <string>Info(Temperature) display environment</string>
+        <string>Info(Cooling) display fan</string>
+        <string>Info(Memory) display memory-usage</string>
+        <string>Info(Uptime) display version</string>
+        <string>Info(Debug) terminal monitorNewLine()debug dhcp ipv4 packet filter-id mac-address</string>
+        <string>   NotSelectableLine()</string>
+      </Items>
+      <SimulatedClipboard>17.31.0.213 port0/0/2</SimulatedClipboard>
+    </AutoShownTab>
+  </List>
+</AutoShownTabs>

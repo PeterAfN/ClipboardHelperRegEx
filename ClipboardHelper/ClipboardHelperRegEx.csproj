@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" />
+  <Import Project="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props" Condition="Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D8F74BA-E1E4-4F78-B7F5-F7D3C382327B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ClipboardHelperRegEx</RootNamespace>
+    <AssemblyName>ClipboardHelperRegEx</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>C:\Users\peter\Documents\GitHub\ClickOnceInstallationFilesForClipboardHelperRegEx\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>https://raw.githubusercontent.com/PeterAfN/ClickOnceInstallationFilesForClipboardHelperRegEx/master/publish/</InstallUrl>
+    <UpdateUrl>https://raw.githubusercontent.com/PeterAfN/ClickOnceForClipboardRegexPaster/master/publish/</UpdateUrl>
+    <SupportUrl>https://github.com/PeterAfN/ClipboardHelperRegEx</SupportUrl>
+    <ErrorReportUrl>https://github.com/PeterAfN/ClipboardHelperRegEx</ErrorReportUrl>
+    <ProductName>ClipboardHelperRegEx</ProductName>
+    <PublisherName>Peter Palosaari</PublisherName>
+    <SuiteName>ClipboardHelperRegEx</SuiteName>
+    <MinimumRequiredVersion>0.0.0.1</MinimumRequiredVersion>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>0.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IntermediateOutputPath>C:\Users\peter\AppData\Local\Temp\vs4ECB.tmp\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IntermediateOutputPath>C:\Users\peter\AppData\Local\Temp\vs4ECB.tmp\Release\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>DD288E964640536971EBCE5B2E1FD43F23BA4B1D</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ClipboardHelper_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>Internet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ClipboardHelperRegEx.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AdysTech.CredentialManager, Version=1.9.1.0, Culture=neutral, PublicKeyToken=c7d7ee0c7449d0ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdysTech.CredentialManager.1.9.1\lib\net45\AdysTech.CredentialManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Csv, Version=1.0.38.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Csv.1.0.38\lib\net40\Csv.dll</HintPath>
+    </Reference>
+    <Reference Include="Gma.System.MouseKeyHook, Version=5.6.130.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MouseKeyHook.5.6.0\lib\net40\Gma.System.MouseKeyHook.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHotkey, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a76ffb086700b11c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHotkey.2.0.0\lib\net45\NHotkey.dll</HintPath>
+    </Reference>
+    <Reference Include="NHotkey.WindowsForms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a76ffb086700b11c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHotkey.WindowsForms.2.0.0\lib\net45\NHotkey.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsInput, Version=1.0.4.0, Culture=neutral, PublicKeyToken=9b287f7dc5073cad, processorArchitecture=MSIL">
+      <HintPath>..\packages\InputSimulator.1.0.4.0\lib\net20\WindowsInput.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLogic\Clipboard.cs" />
+    <Compile Include="BusinessLogic\GetTextClipboard.cs" />
+    <Compile Include="BusinessLogic\CookieAwareWebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BusinessLogic\ExtensionUIThread.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BusinessLogic\ExtensionINotifyPropertyChanged.cs" />
+    <Compile Include="BusinessLogic\FileData.cs" />
+    <Compile Include="BusinessLogic\FormFading.cs" />
+    <Compile Include="BusinessLogic\History.cs" />
+    <Compile Include="BusinessLogic\IResourcesService.cs" />
+    <Compile Include="BusinessLogic\ISettingsService.cs" />
+    <Compile Include="BusinessLogic\ISettingsServiceXmlSerialization.cs" />
+    <Compile Include="BusinessLogic\JsonMethods.cs" />
+    <Compile Include="BusinessLogic\Lines.cs" />
+    <Compile Include="BusinessLogic\ListboxMultiSelection.cs" />
+    <Compile Include="BusinessLogic\NativeMethods.cs" />
+    <Compile Include="BusinessLogic\NotifyIcon.cs" />
+    <Compile Include="BusinessLogic\Pasting.cs" />
+    <Compile Include="BusinessLogic\Presenters\PresenterUserSettingsRightAdvanced.cs" />
+    <Compile Include="BusinessLogic\Presenters\PresenterUserSettingsRightHelp.cs" />
+    <Compile Include="BusinessLogic\SetTextClipboard.cs" />
+    <Compile Include="BusinessLogic\TagChangeableContent.cs" />
+    <Compile Include="BusinessLogic\TagConsole.cs" />
+    <Compile Include="BusinessLogic\TagFromUnixTimeMilliSecondsToUTC.cs" />
+    <Compile Include="BusinessLogic\TagInfo.cs" />
+    <Compile Include="BusinessLogic\TagNewLine.cs" />
+    <Compile Include="BusinessLogic\TagPassword.cs" />
+    <Compile Include="BusinessLogic\TagRegex.cs" />
+    <Compile Include="BusinessLogic\TagRegexCSVFileGet.cs" />
+    <Compile Include="BusinessLogic\TagRegexReplace.cs" />
+    <Compile Include="BusinessLogic\Tags.cs" />
+    <Compile Include="BusinessLogic\TagOutlook.cs" />
+    <Compile Include="BusinessLogic\Presenters\PresenterAbout.cs" />
+    <Compile Include="BusinessLogic\Presenters\PresenterDialog.cs" />
+    <Compile Include="BusinessLogic\Presenters\PresenterMain.cs" />
+    <Compile Include="BusinessLogic\Presenters\PresenterMainSplCont.cs" />
+    <Compile Include="BusinessLogic\Presenters\PresenterMainSplContPanelDown.cs" />
+    <Compile Include="BusinessLogic\Presenters\PresenterMainSplContPanelUpTabs.cs" />
+    <Compile Include="BusinessLogic\Presenters\PresenterMin.cs" />
+    <Compile Include="BusinessLogic\Presenters\PresenterUserSettings.cs" />
+    <Compile Include="BusinessLogic\Presenters\PresenterUserSettingsRightAppearance.cs" />
+    <Compile Include="BusinessLogic\Presenters\PresenterUserSettingsRightAutoShownTabs.cs" />
+    <Compile Include="BusinessLogic\Presenters\PresenterUserSettingsRightManuallyShownTabs.cs" />
+    <Compile Include="BusinessLogic\Presenters\PresenterUserSettingsDownButtons.cs" />
+    <Compile Include="BusinessLogic\Presenters\PresenterUserSettingsLeftMenu.cs" />
+    <Compile Include="BusinessLogic\ResourcesService.cs" />
+    <Compile Include="BusinessLogic\AutoShownTab.cs" />
+    <Compile Include="BusinessLogic\AutoShownTabs.cs" />
+    <Compile Include="BusinessLogic\SettingsService.cs" />
+    <Compile Include="BusinessLogic\AssemblyInformation.cs" />
+    <Compile Include="BusinessLogic\SettingsServiceXmlSerialization.cs" />
+    <Compile Include="BusinessLogic\ShortcutKeys.cs" />
+    <Compile Include="BusinessLogic\ManuallyShownTab.cs" />
+    <Compile Include="BusinessLogic\ManuallyShownTabs.cs" />
+    <Compile Include="BusinessLogic\TagWebGet.cs" />
+    <Compile Include="BusinessLogic\TagWebGetJason.cs" />
+    <Compile Include="BusinessLogic\TagWebURLGoTo.cs" />
+    <Compile Include="BusinessLogic\UIKeyNavigation.cs" />
+    <Compile Include="BusinessLogic\Validate.cs" />
+    <Compile Include="BusinessLogic\ValidateXml.cs" />
+    <Compile Include="BusinessLogic\WebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BusinessLogic\WebCredentials.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="ModifiedControls\AdvancedComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModifiedControls\ModifiedListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModifiedControls\ModifiedSplitContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IViewDialog.cs" />
+    <Compile Include="Views\IViewMainSplCont.cs" />
+    <Compile Include="Views\IViewMainSplContPanelDown.cs" />
+    <Compile Include="Views\IViewMainSplContPanelUpTabs.cs" />
+    <Compile Include="Views\IViewUserSettingsRightAdvanced.cs" />
+    <Compile Include="Views\IViewUserSettingsRightAppearance.cs" />
+    <Compile Include="Views\IViewUserSettingsRightAutoShownTabs.cs" />
+    <Compile Include="Views\IViewUserSettingsRightHelp.cs" />
+    <Compile Include="Views\IViewUserSettingsRightManuallyShownTabs.cs" />
+    <Compile Include="Views\IViewUserSettingsButtonsDown.cs" />
+    <Compile Include="Views\ViewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ViewDialog.Designer.cs">
+      <DependentUpon>ViewDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewMainSplCont.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ViewMainSplCont.Designer.cs">
+      <DependentUpon>ViewMainSplCont.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewMainSplContPanelDown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ViewMainSplContPanelDown.Designer.cs">
+      <DependentUpon>ViewMainSplContPanelDown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewMainSplContPanelUpTabs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ViewMainSplContPanelUpTabs.Designer.cs">
+      <DependentUpon>ViewMainSplContPanelUpTabs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewPureTextInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ViewPureTextInfo.Designer.cs">
+      <DependentUpon>ViewPureTextInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewUserSettingsDownButtons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ViewUserSettingsDownButtons.Designer.cs">
+      <DependentUpon>ViewUserSettingsDownButtons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IViewUserSettingsMenuLeft.cs" />
+    <Compile Include="Views\ViewAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ViewAbout.Designer.cs">
+      <DependentUpon>ViewAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IViewAbout.cs" />
+    <Compile Include="Views\IViewMin.cs" />
+    <Compile Include="Views\IViewUserSettings.cs" />
+    <Compile Include="Views\IViewMain.cs" />
+    <Compile Include="Views\ViewMin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ViewMin.Designer.cs">
+      <DependentUpon>ViewMin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewUserSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ViewUserSettings.Designer.cs">
+      <DependentUpon>ViewUserSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ViewMain.Designer.cs">
+      <DependentUpon>ViewMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ViewUserSettingsLeftMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ViewUserSettingsLeftMenu.Designer.cs">
+      <DependentUpon>ViewUserSettingsLeftMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewUserSettingsRightAdvanced.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ViewUserSettingsRightAdvanced.Designer.cs">
+      <DependentUpon>ViewUserSettingsRightAdvanced.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewUserSettingsRightAppearance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ViewUserSettingsRightAppearance.Designer.cs">
+      <DependentUpon>ViewUserSettingsRightAppearance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewUserSettingsRightAutoShownTabs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ViewUserSettingsRightAutoShownTabs.Designer.cs">
+      <DependentUpon>ViewUserSettingsRightAutoShownTabs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewUserSettingsRightHelp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ViewUserSettingsRightHelp.designer.cs">
+      <DependentUpon>ViewUserSettingsRightHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewUserSettingsRightManuallyShownTabs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ViewUserSettingsRightManuallyShownTabs.Designer.cs">
+      <DependentUpon>ViewUserSettingsRightManuallyShownTabs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XmlSerialization.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewAbout.resx">
+      <DependentUpon>ViewAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewDialog.resx">
+      <DependentUpon>ViewDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewMainSplCont.resx">
+      <DependentUpon>ViewMainSplCont.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewMainSplContPanelDown.resx">
+      <DependentUpon>ViewMainSplContPanelDown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewMainSplContPanelUpTabs.resx">
+      <DependentUpon>ViewMainSplContPanelUpTabs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewMin.resx">
+      <DependentUpon>ViewMin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewPureTextInfo.resx">
+      <DependentUpon>ViewPureTextInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewUserSettings.resx">
+      <DependentUpon>ViewUserSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewMain.resx">
+      <DependentUpon>ViewMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewUserSettingsDownButtons.resx">
+      <DependentUpon>ViewUserSettingsDownButtons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewUserSettingsLeftMenu.resx">
+      <DependentUpon>ViewUserSettingsLeftMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewUserSettingsRightAdvanced.resx">
+      <DependentUpon>ViewUserSettingsRightAdvanced.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewUserSettingsRightAppearance.resx">
+      <DependentUpon>ViewUserSettingsRightAppearance.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewUserSettingsRightAutoShownTabs.resx">
+      <DependentUpon>ViewUserSettingsRightAutoShownTabs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewUserSettingsRightHelp.resx">
+      <DependentUpon>ViewUserSettingsRightHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewUserSettingsRightManuallyShownTabs.resx">
+      <DependentUpon>ViewUserSettingsRightManuallyShownTabs.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="AutoXmlSchema.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ManualXmlSchema.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaseForm\BaseForm\Template.csproj">
+      <Project>{ec97da6c-1ea0-495b-93cf-f6be242a099c}</Project>
+      <Name>Template</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\AutoShownTabs.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\activatedForDarkTheme.ico" />
+    <None Include="Resources\activatedForLightTheme.ico" />
+    <None Include="Resources\Closed.png" />
+    <None Include="Resources\ClosedSelected.png" />
+    <None Include="Resources\deactivatedForDarkTheme.ico" />
+    <None Include="Resources\deactivatedForLightTheme.ico" />
+    <None Include="Resources\dynamicIcon1ForDarkTheme.ico" />
+    <None Include="Resources\dynamicIcon1ForLightTheme.ico" />
+    <None Include="Resources\dynamicIcon2ForDarkTheme.ico" />
+    <None Include="Resources\dynamicIcon2ForLightTheme.ico" />
+    <None Include="Resources\dynamicIcon3ForDarkTheme.ico" />
+    <None Include="Resources\dynamicIcon3ForLightTheme.ico" />
+    <None Include="Resources\dynamicIcon4ForDarkTheme.ico" />
+    <None Include="Resources\dynamicIcon4ForLightTheme.ico" />
+    <None Include="Resources\dynamicIcon5ForDarkTheme.ico" />
+    <None Include="Resources\dynamicIcon5ForLightTheme.ico" />
+    <None Include="Resources\dynamicIcon6ForDarkTheme.ico" />
+    <None Include="Resources\dynamicIcon6ForLightTheme.ico" />
+    <None Include="Resources\dynamicIcon7ForDarkTheme.ico" />
+    <None Include="Resources\dynamicIcon7ForLightTheme.ico" />
+    <None Include="Resources\dynamicIcon8ForDarkTheme.ico" />
+    <None Include="Resources\dynamicIcon8ForLightTheme.ico" />
+    <None Include="Resources\LeftArrow.png" />
+    <None Include="Resources\LeftArrowSelected.png" />
+    <None Include="Resources\Locked.png" />
+    <None Include="Resources\LockedSelected.png" />
+    <Content Include="Resources\macvendor.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\minimize_selected.png" />
+    <None Include="Resources\minimize_unselected.png" />
+    <None Include="Resources\RightArrow.png" />
+    <None Include="Resources\RightArrowSelected.png" />
+    <None Include="Resources\Unlocked.png" />
+    <None Include="Resources\UnlockedSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\analyzers\dotnet\cs\Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\analyzers\dotnet\Microsoft.CodeAnalysis.VersionCheckAnalyzer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Humanizer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeQuality.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeQuality.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetCore.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetCore.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help.txt" />
+    <None Include="Resources\License.txt" />
+    <None Include="Resources\Logo.png" />
+    <Content Include="Resources\ManuallyShownTabs.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Resources\AutoShownTabs.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\ManuallyShownTabs.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props'))" />
+  </Target>
+</Project>

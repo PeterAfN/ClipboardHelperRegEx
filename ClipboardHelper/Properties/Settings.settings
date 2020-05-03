@@ -1,0 +1,100 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ClipboardHelperRegEx.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="appearanceWaitUntilFade" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="sizeMain" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">385, 730</Value>
+    </Setting>
+    <Setting Name="appearanceSelectedKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Z</Value>
+    </Setting>
+    <Setting Name="appearanceFadeChoices" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Minimize</Value>
+    </Setting>
+    <Setting Name="appearanceFocus" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="appearanceOpenBrowser" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="appearanceCTRL" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="appearanceALT" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="appearanceSHIFT" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="appearanceWIN" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="appearanceSecondsShowing" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="location" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">400, 400</Value>
+    </Setting>
+    <Setting Name="appearanceAutostart" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="locked" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="sizeUserSettings" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">700, 423</Value>
+    </Setting>
+    <Setting Name="sizeMin" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">0, 14</Value>
+    </Setting>
+    <Setting Name="sizeAbout" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">449, 229</Value>
+    </Setting>
+    <Setting Name="sizeWarning" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">314, 113</Value>
+    </Setting>
+    <Setting Name="activated" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="appearanceFormattingExclusions" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Excel</Value>
+    </Setting>
+    <Setting Name="appearanceColorInfo" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">DeepSkyBlue</Value>
+    </Setting>
+    <Setting Name="appearanceColorChoices" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Title</Value>
+    </Setting>
+    <Setting Name="appearanceColorOutlookSearch" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">SkyBlue</Value>
+    </Setting>
+    <Setting Name="appearanceColorTitle" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">LightSteelBlue</Value>
+    </Setting>
+    <Setting Name="appearanceColorWebUrlGoTo" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">SteelBlue</Value>
+    </Setting>
+    <Setting Name="appearanceColorSelection" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="appearanceProgramsAlternativePasting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MobaXterm;mRemoteNG;PuTTY;ConEmu64</Value>
+    </Setting>
+    <Setting Name="advancedFiles" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Value>
+    </Setting>
+    <Setting Name="Setting" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UpgradeRequired" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FirstTimeRunForThisVersion" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

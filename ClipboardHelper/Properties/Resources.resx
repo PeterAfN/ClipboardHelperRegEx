@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LockedSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\lockedselected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RightArrowSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\rightarrowselected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeftArrowSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\leftarrowselected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minimize_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimize_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Closed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\closed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unlocked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\unlocked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minimize_unselected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimize_unselected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Locked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\locked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UnlockedSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\unlockedselected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClosedSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\closedselected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RightArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\rightarrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeftArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\leftarrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="activatedForDarkTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\activatedForDarkTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="activatedForLightTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\activatedForLightTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deactivatedForDarkTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deactivatedForDarkTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deactivatedForLightTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deactivatedForLightTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dynamicIcon1ForDarkTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dynamicIcon1ForDarkTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dynamicIcon1ForLightTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dynamicIcon1ForLightTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dynamicIcon2ForDarkTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dynamicIcon2ForDarkTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dynamicIcon2ForLightTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dynamicIcon2ForLightTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dynamicIcon3ForDarkTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dynamicIcon3ForDarkTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dynamicIcon3ForLightTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dynamicIcon3ForLightTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dynamicIcon4ForDarkTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dynamicIcon4ForDarkTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dynamicIcon4ForLightTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dynamicIcon4ForLightTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dynamicIcon5ForDarkTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dynamicIcon5ForDarkTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dynamicIcon5ForLightTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dynamicIcon5ForLightTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dynamicIcon6ForDarkTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dynamicIcon6ForDarkTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dynamicIcon6ForLightTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dynamicIcon6ForLightTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dynamicIcon7ForDarkTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dynamicIcon7ForDarkTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dynamicIcon7ForLightTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dynamicIcon7ForLightTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dynamicIcon8ForDarkTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dynamicIcon8ForDarkTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dynamicIcon8ForLightTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dynamicIcon8ForLightTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Program_CurrentDomainOnUnhandledException" xml:space="preserve">
+    <value>An unexpected error occurred</value>
+  </data>
+  <data name="Program_ApplicationOnThreadException" xml:space="preserve">
+    <value>An unexpected error occurred</value>
+  </data>
+  <data name="PresenterMain_OnLoadView_Clipboard_Helper" xml:space="preserve">
+    <value>ClipboardHelperRegEx</value>
+  </data>
+  <data name="PresenterMain_OnMouseUpNotifyIconProgram_RemoveTextFormatting" xml:space="preserve">
+    <value>An error occured while setting value to the clipboard. Please click OK to continue using ClipboardHelperRegEx
+
+
+Click OK to continue using ClipboardHelperRegEx</value>
+  </data>
+  <data name="PresenterMain_OnMouseUpNotifyIconProgram_RemoveTextFormatting_caption" xml:space="preserve">
+    <value>An error occured</value>
+  </data>
+  <data name="PresenterMainSplContPanelUpTabs_CreateTabs_Auto" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="PresenterMainSplContPanelUpTabs_TransformLinesForOneListbox_Please_select_an_item_or_items_in_the_list_" xml:space="preserve">
+    <value>Please select an item or items in the list.</value>
+  </data>
+  <data name="PresenterMainSplContPanelUpTabs_Pasting_PastingOccured__out_of_" xml:space="preserve">
+    <value> out of </value>
+  </data>
+  <data name="PresenterMainSplContPanelUpTabs_Pasting_PastingOccured__pasted_" xml:space="preserve">
+    <value> pasted.</value>
+  </data>
+  <data name="PresenterMainSplContPanelUpTabs_TriggerEventsWhetherItemsAreSelectedOrNot_Select_another_app_to_paste_line__Clear_selection_with_ESC_" xml:space="preserve">
+    <value>Select another app to paste line. Clear selection with ESC.</value>
+  </data>
+  <data name="PresenterMainSplContPanelUpTabs_TriggerEventsWhetherItemsAreSelectedOrNot_Select_another_app_to_paste_lines__Clear_selection_with_ESC_" xml:space="preserve">
+    <value>Select another app to paste lines. Clear selection with ESC.</value>
+  </data>
+  <data name="PresenterMainSplContPanelUpTabs_Pasting_MultipastingDeactivated_Pasting_finished__Please_select_an_item_or_items_in_the_list_" xml:space="preserve">
+    <value>Pasting finished. Please select an item or items in the list.</value>
+  </data>
+  <data name="PresenterMainSplContPanelUpTabs_SelectionErrorCheckPassed_Program_wasn_t_ready__selection_has_been_cleared__Please_select_again_" xml:space="preserve">
+    <value>Program wasn't ready, selection has been cleared. Please select again!</value>
+  </data>
+  <data name="PresenterMainSplContPanelUpTabs_SendPastingClassWithPastableLines_Paste_with_LEFT_CTRL_V__Abort_pasting_with_ESC_" xml:space="preserve">
+    <value>Paste with LEFT CTRL+V. Abort pasting with ESC.</value>
+  </data>
+  <data name="PresenterMin_Clipboard_Changed_In_Clipboard_now__" xml:space="preserve">
+    <value>In Clipboard now: </value>
+  </data>
+  <data name="PresenterUserSettingsRightAdvanced_ShowDialogToUser_Open_" xml:space="preserve">
+    <value>Do you want to open </value>
+  </data>
+  <data name="PresenterUserSettingsRightAdvanced_ShowDialogToUser__st__" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="PresenterUserSettingsRightAdvanced_ShowDialogToUser_browser_" xml:space="preserve">
+    <value>:s in the Web Browser?</value>
+  </data>
+  <data name="PresenterUserSettingsRightAdvanced_ShowDialogToUser_Please_confirm" xml:space="preserve">
+    <value>Please confirm</value>
+  </data>
+  <data name="PresenterUserSettingsRightAutoShownTabs_Dialog_ClickOkMouseButton__2_Please_edit___insert_the_RegEx_to_be_associated_with___" xml:space="preserve">
+    <value>2.Please edit / insert the RegEx* to be associated with: "</value>
+  </data>
+  <data name="PresenterUserSettingsRightAutoShownTabs_Dialog_ClickOkMouseButton___" xml:space="preserve">
+    <value>":</value>
+  </data>
+  <data name="PresenterUserSettingsRightAutoShownTabs_ViewRules_RuleNamesSelectionChanged___" xml:space="preserve">
+    <value>":</value>
+  </data>
+  <data name="PresenterUserSettingsRightAutoShownTabs_ViewRules_RuleNamesSelectionChanged__3__When_Clipboard_text_content_changes_and_RegEx_for_Tab___" xml:space="preserve">
+    <value>3. When Clipboard text content changes and RegEx for Tab: "</value>
+  </data>
+  <data name="PresenterUserSettingsRightAutoShownTabs_ViewRules_RuleNamesSelectionChanged___matches_with_it__please_insert_what_is_shown_" xml:space="preserve">
+    <value>" matches with it, please insert what is shown:</value>
+  </data>
+  <data name="PresenterUserSettingsRightAutoShownTabs_ViewRules_RuleNamesSelectionChanged_Help__Test_if_the_regEx_rule_for_Tab___" xml:space="preserve">
+    <value>Help: Test if the regEx rule for Tab: "</value>
+  </data>
+  <data name="PresenterUserSettingsRightAutoShownTabs_ViewRules_RuleNamesSelectionChanged___functions_correctly_by_inserting_" xml:space="preserve">
+    <value>" functions correctly by inserting:</value>
+  </data>
+  <data name="PresenterUserSettingsRightAutoShownTabs_ViewRules_RegExStringTextChanged__3__When_Clipboard_text_content_changes_and_RegEx_for___" xml:space="preserve">
+    <value>3. When Clipboard text content changes and RegEx for: "</value>
+  </data>
+  <data name="PresenterUserSettingsRightAutoShownTabs_ViewRules_RegExStringTextChanged___RegEx_is_valid_" xml:space="preserve">
+    <value> [RegEx is valid]</value>
+  </data>
+  <data name="PresenterUserSettingsRightAutoShownTabs_ViewRules_RegExStringTextChanged___" xml:space="preserve">
+    <value>":</value>
+  </data>
+  <data name="PresenterUserSettingsRightAutoShownTabs_ViewRules_RegExStringTextChanged___RegEx_not_valid_" xml:space="preserve">
+    <value> [RegEx not valid]</value>
+  </data>
+  <data name="PresenterUserSettingsRightAutoShownTabs_UpdateListboxRightText___" xml:space="preserve">
+    <value>":</value>
+  </data>
+  <data name="ShortcutKeys_AddShortcutKey_Couldn_t_set_Shortcut_key__Another_app_is_probably_using_it__Please_change_the_key_combination_" xml:space="preserve">
+    <value>Couldn't set Shortcut-key. Another app is probably using it. Please change the key combination.</value>
+  </data>
+  <data name="ShortcutKeys_AddShortcutKey_ClipboardHelper" xml:space="preserve">
+    <value>ClipboardHelperRegEx</value>
+  </data>
+  <data name="ViewAbout_SetVersion_Version__" xml:space="preserve">
+    <value>Version: </value>
+  </data>
+  <data name="ViewAbout_SetCompany_Owner__" xml:space="preserve">
+    <value>Owner: </value>
+  </data>
+  <data name="ViewUserSettings_InitiateControls_Settings" xml:space="preserve">
+    <value>ClipboardHelperRegEx - Settings</value>
+  </data>
+  <data name="ViewUserSettings_InitiateControls_Settings_" xml:space="preserve">
+    <value>Settings:</value>
+  </data>
+  <data name="ViewUserSettingsDownButtons_CreateControls_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ViewUserSettingsDownButtons_CreateControls_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ViewUserSettingsDownButtons_CreateControls_Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="PresenterUserSettingsRightAdvanced__view_ReplaceClickMenu_Replace_XML_settings_File" xml:space="preserve">
+    <value>Replace XML settings File</value>
+  </data>
+  <data name="PresenterUserSettingsRightAdvanced__view_ReplaceClickMenu_XML_file_AutoShownTabs_xml" xml:space="preserve">
+    <value>XML file|AutoShownTabs.xml</value>
+  </data>
+  <data name="PresenterUserSettingsRightAdvanced__view_ReplaceClickMenu_XML_file_ManuallyShownTabs_xml" xml:space="preserve">
+    <value>XML file|ManuallyShownTabs.xml</value>
+  </data>
+  <data name="PresenterUserSettingsRightAdvanced__view_AddClickMenu_Add_CSV_data_File" xml:space="preserve">
+    <value>Add CSV data File</value>
+  </data>
+  <data name="PresenterUserSettingsRightAdvanced__view_AddClickMenu_CSV_files___csv" xml:space="preserve">
+    <value>CSV files|*.csv</value>
+  </data>
+  <data name="ListboxMultiSelection_HandleSelectionChange_An_error_occured_when_listbox_selection_was_changed__" xml:space="preserve">
+    <value>An error occured when listbox selection was changed: </value>
+  </data>
+  <data name="PresenterMain_FormHiding_WorkFinished_An_error_occured_while_setting_the_min_forms_visibility_" xml:space="preserve">
+    <value>An error occured while setting the min forms visibility.</value>
+  </data>
+  <data name="PresenterMain_OnMouseUpNotifyIconProgram_An_error_occured_when_setting_value_to_the_clipboard__" xml:space="preserve">
+    <value>An error occured when setting value to the clipboard: </value>
+  </data>
+  <data name="PresenterMain_OnMouseUpNotifyIconProgram_Clipboard_Helper_error" xml:space="preserve">
+    <value>ClipboardHelperRegEx error</value>
+  </data>
+  <data name="PresenterMain_OnMouseUpNotifyIconProgram_An_error_occured_while_OnMouseUpNotifyIconProgram_" xml:space="preserve">
+    <value>An error occured while OnMouseUpNotifyIconProgram.</value>
+  </data>
+  <data name="PresenterMainSplContPanelUpTabs_TransformLinesForOneSpecificListbox_An_error__1__occured_when_setting_a_new_value_to_listbox__" xml:space="preserve">
+    <value>An error (1) occured when setting a new value to listbox: </value>
+  </data>
+  <data name="PresenterMainSplContPanelUpTabs_TransformLinesForOneSpecificListbox_Clipboard_Helper_error" xml:space="preserve">
+    <value>ClipboardHelperRegEx error</value>
+  </data>
+  <data name="PresenterMainSplContPanelUpTabs_TransformLinesForOneSpecificListbox_An_error__2__occured_when_setting_a_new_value_to_listbox__" xml:space="preserve">
+    <value>An error (2) occured when setting a new value to listbox: </value>
+  </data>
+  <data name="PresenterMainSplContPanelUpTabs_TransformLinesForOneSpecificListbox_An_error__3__occured_when_setting_a_new_value_to_listbox__" xml:space="preserve">
+    <value>An error (3) occured when setting a new value to listbox: </value>
+  </data>
+  <data name="PresenterMainSplContPanelUpTabs_TransformLinesForOneSpecificListbox_An_error__4__occured_when_setting_a_new_value_to_listbox__" xml:space="preserve">
+    <value>An error (4) occured when setting a new value to listbox: </value>
+  </data>
+  <data name="PresenterUserSettingsRightAdvanced_Dialog_ClickOkMouseButton_An_error_occured_while_Dialog_ClickOkMouseButton_" xml:space="preserve">
+    <value>An error occured while Dialog_ClickOkMouseButton.</value>
+  </data>
+  <data name="PresenterUserSettingsRightAutoShownTabs_InsertItemsListbox_An_error_occured_in_the_user_setting_when_setting_a_new_item_to_listbox__" xml:space="preserve">
+    <value>An error occured in the user setting when setting a new item to listbox: </value>
+  </data>
+  <data name="PresenterUserSettingsRightAutoShownTabs_InsertItemsListbox_Clipboard_Helper_error" xml:space="preserve">
+    <value>ClipboardHelperRegEx error</value>
+  </data>
+  <data name="FormFading_Change_An_error_occured_while_changing_the_current_form_visibility_status_with_a_new_one_" xml:space="preserve">
+    <value>An error occured while changing the current form visibility status with a new one.</value>
+  </data>
+  <data name="FormFading_FadeFormByChangingOpacity_An_error_occured_while_changing_the_forms_opacity_and_visibility" xml:space="preserve">
+    <value>An error occured while changing the forms opacity and visibility</value>
+  </data>
+  <data name="ListboxMultiSelection_HandleSelectionChange_Clipboard_Helper_error" xml:space="preserve">
+    <value>ClipboardHelperRegEx error</value>
+  </data>
+  <data name="ListboxMultiSelection_StripSelectionToOutData_An_error_occured_when_getting_selection_ready__" xml:space="preserve">
+    <value>An error occured when getting selection ready: </value>
+  </data>
+  <data name="NotifyIcon_SetStatic_An_error_occured_when_setting_program_icon_static__" xml:space="preserve">
+    <value>An error occured when setting program icon static: </value>
+  </data>
+  <data name="NotifyIcon_SetStatic_Clipboard_Helper_error" xml:space="preserve">
+    <value>ClipboardHelperRegEx error</value>
+  </data>
+  <data name="Pasting_GlobalHook_KeyDown_An_error_occured_while_pasting" xml:space="preserve">
+    <value>An error occured while pasting</value>
+  </data>
+  <data name="Pasting_RemoveAndReturnFirstLine_An_error_occured_when_getting_the_next_item_to_paste__" xml:space="preserve">
+    <value>An error occured when getting the next item to paste: </value>
+  </data>
+  <data name="Pasting_RemoveAndReturnFirstLine_Clipboard_Helper_error" xml:space="preserve">
+    <value>ClipboardHelperRegEx error</value>
+  </data>
+  <data name="PresenterUserSettingsLeftMenu_OnMouseClickNode_Appearance" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="PresenterUserSettingsLeftMenu_OnMouseClickNode_AutoShownTabs" xml:space="preserve">
+    <value>AutoShownTabs</value>
+  </data>
+  <data name="PresenterUserSettingsLeftMenu_OnMouseClickNode_ManuallyShownTabs" xml:space="preserve">
+    <value>ManuallyShownTabs</value>
+  </data>
+  <data name="PresenterUserSettingsLeftMenu_OnMouseClickNode_Advanced" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="AutoXmlSchema" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AutoXmlSchema.xsd;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ManualXmlSchema" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ManualXmlSchema.xsd;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ValidateXml_ValidationCallBack_" xml:space="preserve">
+    <value>	Validation error: </value>
+  </data>
+  <data name="SetTextClipboard_SetText_Windows_Clipboard_could_not_set_text_" xml:space="preserve">
+    <value>Windows Clipboard could not set text.</value>
+  </data>
+  <data name="GetTextClipboard_Start_Windows_Clipboard_could_not_get_text_" xml:space="preserve">
+    <value>Windows Clipboard could not get text.</value>
+  </data>
+  <data name="GetTextClipboard_Start_Clipboard_Helper_information" xml:space="preserve">
+    <value>ClipboardHelperRegEx information</value>
+  </data>
+  <data name="SetTextClipboard_SetText_Clipboard_Helper_information" xml:space="preserve">
+    <value>ClipboardHelperRegEx information</value>
+  </data>
+  <data name="SettingsServiceXmlSerialization_ManuallyShownTabs_" xml:space="preserve">
+    <value>ClipboardHelperRegEx detected a corrupt xml data file in: 
+
+</value>
+  </data>
+  <data name="SettingsServiceXmlSerialization_ManuallyShownTabs__error_" xml:space="preserve">
+    <value>.error.</value>
+  </data>
+  <data name="SettingsServiceXmlSerialization_ManuallyShownTabs_Clipboard_Helper_Error" xml:space="preserve">
+    <value>ClipboardHelperRegEx Error</value>
+  </data>
+  <data name="SettingsServiceXmlSerialization_AutoShownTabs__xml" xml:space="preserve">
+    <value>.xml</value>
+  </data>
+  <data name="ValidateXml_Validate_" xml:space="preserve">
+    <value>Error while replacing xml data file. Replacement has been aborted: 
+
+</value>
+  </data>
+  <data name="ValidateXml_Validate_Clipboard_Helper_Xml_file_validation_failed" xml:space="preserve">
+    <value>ClipboardHelperRegEx Xml file validation failed</value>
+  </data>
+  <data name="Program_Main_You_cannot_run_more_than_one_instance_of_this_application_" xml:space="preserve">
+    <value>You cannot run more than one instance of this application.</value>
+  </data>
+  <data name="Program_Main_Clipboard_Helper" xml:space="preserve">
+    <value>ClipboardHelperRegEx</value>
+  </data>
+  <data name="Help" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="License" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\License.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="macvendor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\macvendor.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PresenterUserSettingsRightAdvanced_View_ReplaceClickMenu_CSV_file___Macvendor_csvl" xml:space="preserve">
+    <value>CSV file | Macvendor.csv</value>
+  </data>
+</root>

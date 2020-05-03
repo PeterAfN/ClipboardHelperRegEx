@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ManuallyShownTabs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <List>
+    <ManuallyShownTab>
+      <Name>My Text Templates</Name>
+      <Lines>
+        <string>   NotSelectableLine()</string>
+        <string>Caption(My text templates)   NotSelectableLine()</string>
+        <string>   Info(Sample text 1) This is just a text sample which can be pasted to other programs.NewLine()NewLine()Please change this text in the settings.</string>
+        <string>   Info(Sample text 2) This is another text sample which can be pasted to other programs.</string>
+        <string>   NotSelectableLine()</string>
+        <string>Caption(Newly added)   NotSelectableLine()</string>
+        <string>   Info(HelpTip 5)  A new sample text.</string>
+        <string />
+      </Lines>
+    </ManuallyShownTab>
+    <ManuallyShownTab>
+      <Name>Quick Help</Name>
+      <Lines>
+        <string>   NotSelectableLine()</string>
+        <string>Caption(How the program functions:)   NotSelectableLine()</string>
+        <string>   Info(HelpTip 1) This window can be resized with the left mouse button by dragging.</string>
+        <string>   Info(HelpTip 2) Left click on this text selects it. To paste this line to another program, press ctrl+v.</string>
+        <string>   Info(HelpTip 3) This is another text sample. Please add, edit or delete these texts in the settings. Get to the settings by right clicking the program icon on the system tray and select settings.</string>
+        <string>   Info(HelpTip 4) Line breaks can be used also. NewLine()NewLine() This is an example of that. Please see the Settings how this is done.</string>
+        <string>   Info(HelpTip 5) To select several  texts, hold left mouse button and drag the mouse downwards or upwards. Ctrl and/or shift key can also be used when selecting, just as selecting files in Windows File Explorer.</string>
+        <string>   Info(HelpTip 6) This window can be minimized by clicking the "arrow icon pointing downwards" on this window.</string>
+        <string>   Info(HelpTip 7) This window can be closed by clicking "close icon".</string>
+        <string>   Info(HelpTip 8) This window can be locked by clicking the "lock icon". This means the window won't get minimized or closed after selecting texts.</string>
+        <string>   Info(HelpTip 9) Even if this window is closed or minimized, the program will still be active in the background listening to changes (text only) in the Windows Clipboard.</string>
+        <string>   Info(HelpTip 10) This program can automatically show this window when text changes in the Clipboard. When this window is shown, it's shown on top of the other windows.</string>
+        <string>   Info(HelpTip 10) This program can display a list of different selectable texts on the "Auto tab" depending on which new text is in the Clipboard.The selected text is then automatically set into the Clipboard for pasting later.</string>
+        <string>   Info(HelpTip 11) Regular expressions are used to match specific new text content in the Clipboard with a specific list in the "Auto"  tab.</string>
+        <string>   Info(HelpTip 12) Please click "Help" in the system tray menu for a complete guide how to use the program.</string>
+        <string>   Info(HelpTip 13) You can delete this "Quick Help" tab in the settings.</string>
+        <string />
+        <string />
+      </Lines>
+    </ManuallyShownTab>
+  </List>
+</ManuallyShownTabs>

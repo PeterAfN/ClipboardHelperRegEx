@@ -1,0 +1,248 @@
+
+CONTENTS OF THIS FILE - CLIPBOARD HELPER REGEX - April 28, 2020
+---------------------------------------------------------------
+
+ * 1.  Introduction
+ * 2.  Requirements
+ * 3.  How it Works
+ * 4.  Features
+ * 5.  How to use
+ * 6.  Installation
+ * 7.  Why use this
+ * 8.  Settings
+ * 9.  License
+ * 10. Built With
+ * 11. Author
+ * 12. Project status
+
+
+1. Introduction
+---------------
+
+CLIPBOARD HELPER REGEX can automatically detect if text changes in Windows Clipboard. It can display a list of selectable texts depending
+on which new text is in the Clipboard. The selected text is then automatically set in to the Clipboard for pasting later. Regular expressions
+are used to match specific new text content in the Clipboard with a specific list.
+
+
+2. Requirements
+---------------
+
+-Windows 10.
+-Microsoft Net framework 4.8
+-Older Windows can function but hasn't been tested.
+
+
+3. How it Works
+---------------
+
+-Can monitor Windows Clipboard for changes.
+-If there is a new text in the Clipboard, the program tries to match the Clipboard text with a list of predefined (Reg)ular (Ex)pressions.
+-If any of the defined RegEx can match the new text in the Clipboard, a list of predefined selectable texts is shown. 
+-When line(s) of text in the list is/are selected, it's copied to the Clipboard where it can be pasted to other programs.
+-Every list has a specific Regular Expression that determines when that specific list is shown.
+-If the program can't match any RegEx with a new text in Clipboard, then nothing happens.
+
+
+4. Features
+---------------
+
+-Can select multiple lines of texts with Mouse, CTRL and SHIFT (as selecting files in Explorer). This can be ideal when pasting
+ multiple commands to console windows with CTRL+V. 
+-Shows which text is in Clipboard now.
+-Automatically start upon Windows boot.
+-Deactivate program. When deactivated it won't listen Clipboard for changes.
+-Main window can be automatically closed, minimized or remain visible after a text has been selected.
+-Set the number of seconds the main window remain visible after selecting a text in the list.
+-Main window can be closed instantly or slowly faded.
+-Main window can be set to be focused when shown.
+-Main window can be shown in three ways: Program matches Clipboard with RegEx, by selecting "Show" in the icon menu
+ or with predefined short cut keys.
+-Set a combination of shortcut keys (CTRL, ALT, SHIFT, WIN and A to Z) to show the main program window when pressed.
+-Change the default line selection color and some other color settings.
+-Can hold one secret and secure password which can be used when selecting texts and pasting. This is helpful when logging in to places. 
+ The stored password is securely stored in Windows Credential Manager.
+-Prompt for username and password when requesting Json data which is password protected. This login information can be 
+ securely stored in Windows Credential Manager.
+-Alternative pasting method. Ability to paste in console programs which usually doesn't support pasting with CTRL+V. This set of programs
+ can be changed in the settings. The pre stored programs are: MobaXterm; mRemoteNG; PuTTY; ConEmu64.
+-Can be resetted to factory settings in the settings.
+-Has two different Tabs, "Auto" and "Manual". The Auto tab can't be renamed. The Manual tab can be renamed in the settings.
+-Auto tab can be shown by selecting it with the mouse, keyboard left arrow navigation key or when there is a RegEx match with the Clipboard.
+-Auto tab has navigation buttons so it's possible to go backwards in copy history. 
+-Manual tab can be shown by selecting it with the mouse or with the keyboard arrow navigation keys when main window is in focus.
+-All the saved Auto- and Manual tabs are saved in two settings files: AutoShownTabs.xml and ManuallyShownTabs.xml.
+-Ability to quickly replace the programs default AutoShownTabs.xml and ManuallyShownTabs.xml files with new files (in Advanced Settings).
+-Advanced ability to control if the replaced the AutoShownTabs.xml or ManuallyShownTabs.xml are valid. 
+-Ability to import csv files which data can be shown when program matches with clipboard (in Advanced Settings).
+-All lines are numbered.
+-All lines can be selected using the keyboard with keys 0-9.
+-A line selection can always be aborted by clicking the Escape key. 
+-When program system tray icon is left mouse clicked, all formatting is removed from the text currently in Clipboard.
+
+5. How to use
+---------------
+
+-The program comes with some default settings. The program can show these pre-defined Auto tabs:
+	-"Ip Address-All Not Private"
+	-"Ip Address-Class A Private"
+	-"Ip Address-Class B Private"
+	-"Ip Address-Class C Private"
+	-"Mac Address"
+	-"Switch"
+
+-To test these Auto tabs, please copy the following text with CTRL+C or right click with the mouse and select copy.
+	copy after arrow -> 10.33.23.42 port1/0/15
+	copy after arrow -> 17.31.0.213 port0/0/5
+	copy after arrow -> 17.31.0.213
+	copy after arrow -> 171.31.0.213
+	copy after arrow -> 35.31.0.213
+	copy after arrow -> 53.31.0.213
+	copy after arrow -> 53.31.1.256		(not a valid IP address, nothing happens)
+	copy after arrow -> 10.2.0.1
+	copy after arrow -> 172.16.0.0
+	copy after arrow -> 192.168.0.0
+	copy after arrow -> b8:8d:12:3b0A80
+	copy after arrow -> 00000ABB28FC
+	copy after arrow -> 70-85-C2-B7-67-D5
+	copy after arrow -> G0-85-C2-B7-67-D5 	(not a valid MAC address, nothing happens)
+
+
+6. Installation
+---------------
+
+-Download the latest Setup file from https://github.com/PeterAfN/ClickOnceForClipboardRegexPaster/blob/master/publish/setup.exe?raw=true
+-Open (execute) the file.
+-Bypass Windows SmartScreen by clicking "More Info" and click "Run anyway".
+-Click install when the new Security warning dialog appears.
+-Done!
+
+
+7. Why use this
+---------------
+
+-When repetative copying and pasting is needed between different programs in Windows.
+-Instead of having template texts on Notepad or a text editor, this program can have them easily selectable and easy to paste.
+
+
+8. Settings
+---------------
+
+-Appearance
+
+	-"Fade out and minimize" -> fades out the window and minimizes it.
+	-"Fade out and close" -> fades out the window and closes it.	
+	-"Minimize" -> minimizes the window instantly.		
+	-"Close" -> closes the window instantly.
+	-"Seconds" -> number of seconds, after a text selection in the list, before any window closing, minimizing or fading occurs, 
+	-"Start program automatically on Windows boot." -> If enabled the program will start on Windows boot.
+	-"Focus program when shown." -> Puts the program in focus when its window is shown.	
+	-"Show the window with the following key combinations: ctrl alt shift win a to z" -> When these keys are pressed at the same time
+		the main program window is shown.
+	-"Display text tag; Titel/Info/WebUrlToGo/OutlookSearch/LineSelection in the following color:" -> The default color can be changed
+		to any color.
+	-"Use the text tag Password() with the following password:" -> The text string Password() can be used in Auto tabs to use the
+		password.
+	-"Automatically use Console compatible (CMD, MobaXTerm, Putty etc.) pasting [put programs exe name]:" -> When pasting to another program
+		and the programs *.exe filename is inserted in the textbox, then it will use an alternative pasting method. This is because
+		many console programs don't accept pasting with key combination of CTRL+V, therefore this program solves that issue with
+		an alternative pasting method.
+	-"Reset to Factory settings" -> Resets all settings to factory default. Note, no Auto- or Manual are removed when reset.
+
+-AutoShownTabs
+
+	-"New" -> Creates a new AutoTab with the provided name.
+	-"Delete" -> Deletes the currently selected AutoTab. A warning dialog is shown to prevent unintentional clicks.
+	-"Rename" -> Changes the currently selected AutoTab with a new name.
+	-"Please edit/insert the RegEx to be associated with:" -> A textbox where the RegEx associated the currently selected AutoTab
+		is changed.
+	-"When Clipboard content changes and rules make a match, please insert what is shown:" -> A textbox where all the texts that are to
+		be shown must be inserted. Different tags can be used to increase functionality. The tags are case sensitive and are:
+
+		-ChangeableContent(content) -> Everything between the parenthesis’s "content" can be changed by the user when using the 
+					program. This means its dynamic content.
+
+		-ConsoleOpen(command1; command2; command3; ...) -> When this line is clicked nothing is pasted, instead a PowerShell
+					console window is opened and all the commands "command1" "command2" etc. are run automatically. The
+					console is opened always on the Windows Desktop folder, but can be changed with command "cd".
+
+		-FromUnixTimeMilliSecondsToUTC(unixTimeStamp; GMTPlusHours) -> "unixTimeStamp" is the Unix time stamp to be 
+					converted to a human readable time stamp. "GMTPlusHours" defines how many hours are to be added to
+					the shown GMT time. 
+
+		-Info() -> Everything between the parentheses is only informational help text. When the line is selected this text doesn't
+					get copied to the Clipboard.
+		
+		-NewLine() -> This indicates new line. Text is not allowed between the parentheses.
+
+		-Outlook(searchText) -> When the line containing this tag is clicked, then it will automatically focus an already active
+					Microsoft Outlook search box and automatically search the mailbox for the "searchText".
+
+		-"Password()" -> The password which is stored in the settings (see 8. Appearance) is pasted when line containing this tag is
+					selected. Text is not allowed between the parentheses.
+
+		-Regex(regExString) -> "regExString" string must be a RegEx string which will be matched with what is currently in the
+					Clipboard. Result of that match will be shown.
+
+		-Regex(textToMatch; regExString) -> "regExString" string must be a RegEx string which will be matched to "textToMatch". 
+					Result of that match will be shown.
+
+		-RegexCsvFileGet(Filename; searchText; ignoreCase) -> Searches the csv file with the filename "Filename" which have been 
+					imported earlier (see 8. Advanced) to the program. It is searched for with the "searchText" and if
+					"ignoreCase" is set to [true] then the letter casing is ignored when searching the file.
+
+		-RegexReplace(regExPattern; replacement) -> The current Clipboard value is matched with the "regExPattern" and the result
+					of the matching is replaced with the "replacement".
+
+		-RegexReplace(text; regExPattern; replacement) -> "text" is matched with the "regExPattern" and the result
+					of the matching is replaced with the "replacement"
+
+		-WebGet(URL) -> downloads the "URL" and diplays its text content.
+
+		-WebGetJason(URL; nameOfJasonProperty; toLowerCase) -> Downloads the "URL" and displays "nameOfJasonProperty". If 
+					toLowerCase is true, then it's shown in lower case.
+
+		-WebUrlGoTo(URL) -> when the line is clicked it opens the "URL" in the default Windows Web Browser, last active Browser
+					window 
+
+-ManuallyShownTabs
+
+	-Tab order -> List with all Manually Shown Tabs. Dragging an item on the list with left mouse, reorders the item. Selecting the
+		item with left click, shows the text for that list item on the left. The list on the left is editable. When a list item 
+		is left clicked, a menu appears where a new Manual tab can be added, an existing tab can be renamed or an existing tab can be
+		deleted.
+
+-Advanced
+
+	-Files added -> Shows the AutoShownTabs.xml and ManuallyShownTabs.xml settings files. These two can't be deleted only replaced
+		by left clicking the file and by selecting replace. The program controls if the new file is valid. If not valid the
+		new files will be rejected. If the file list is left clicked and add clicked, a new *.csv file can be imported to the
+		program. This can be used by Auto Tabs when listing selectable texts. A csv file can also be deleted by selecting 
+		"delete" when left clicking the csv file.
+-Help
+
+	-shows a link to this help file.
+
+
+9. License
+---------------
+
+-GNU General Public License v3.0
+
+
+10. Built With
+---------------
+
+Microsoft Visual Studio 2019
+
+
+11. Author
+---------------
+
+Peter Palosaari
+
+
+12. Project status
+---------------
+
+-No new features are been developed at this point.
+-Bugs are fixed.
