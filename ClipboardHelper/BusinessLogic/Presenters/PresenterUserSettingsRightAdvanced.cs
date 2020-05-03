@@ -224,11 +224,11 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                         case 0:
                             // ReSharper disable once RedundantAssignment
                             _ = new ValidateXml(_fileName, ValidateXml.XmlType.Auto);
-                            MessageBox.Show("ValidateXml.Passed=" + ValidateXml.Passed);
+                            //MessageBox.Show("ValidateXml.Passed=" + ValidateXml.Passed);
                             if (ValidateXml.Passed)
                             {
-                                MessageBox.Show("_fileName=" + _fileName);
-                                MessageBox.Show("_destFilePath=" + _destFilePath);
+                                //MessageBox.Show("_fileName=" + _fileName);
+                                //MessageBox.Show("_destFilePath=" + _destFilePath);
                                 File.Copy(_fileName, _destFilePath, true);
                                 UpdateAutoTab();
                                 _settingsServiceXmlSerialization.AutoShownTabs =
@@ -240,8 +240,8 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                             _ = new ValidateXml(_fileName, ValidateXml.XmlType.Manual);
                             if (ValidateXml.Passed)
                             {
-                                MessageBox.Show("_fileName=" + _fileName);
-                                MessageBox.Show("_destFilePath=" + _destFilePath);
+                                //MessageBox.Show("_fileName=" + _fileName);
+                                //MessageBox.Show("_destFilePath=" + _destFilePath);
                                 File.Copy(_fileName, _destFilePath, true);
                                 UpdateManualTab();
                                 _settingsServiceXmlSerialization.ManuallyShownTabs =
