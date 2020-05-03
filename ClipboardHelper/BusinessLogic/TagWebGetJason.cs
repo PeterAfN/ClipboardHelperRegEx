@@ -60,12 +60,12 @@ namespace ClipboardHelperRegEx.BusinessLogic
                 {
                     return ex.Message;
                 }
-                //catch (Exception)
-                //{
-                //    //outData = WhenDownloadingOfJsonFailed(webCredentials, _jSon);
-                //    //return _jSon.GetField(outData, jsonField);
-                //    throw;
-                //}
+                catch (Exception)
+                {
+                    outData = WhenDownloadingOfJsonFailed(webCredentials, _jSon);
+                    return _jSon.GetField(outData, jsonField);
+                    //throw;
+                }
             try
             {
                 outData = _jSon.Download(TimeoutJson);
@@ -83,13 +83,13 @@ namespace ClipboardHelperRegEx.BusinessLogic
                 _jSon.Cache();
                 return ex.Message;
             }
-            //catch
-            //{
-            //    //outData = WhenDownloadingOfJsonFailed(webCredentials, _jSon);
+            catch
+            {
+                outData = WhenDownloadingOfJsonFailed(webCredentials, _jSon);
 
-            //    //return _jSon.GetField(outData, jsonField);
-            //    throw;
-            //}
+                return _jSon.GetField(outData, jsonField);
+                //throw;
+            }
         }
 
         private string WhenDownloadingOfJsonFailed(WebCredentials webCredentials, JsonMethods jSon)
@@ -126,8 +126,8 @@ namespace ClipboardHelperRegEx.BusinessLogic
             }
             catch (Exception)
             {
-                //return WhenDownloadingOfJsonFailed(webCred, jSn);
-                throw;
+                return WhenDownloadingOfJsonFailed(webCred, jSn);
+                //throw;
             }
         }
     }

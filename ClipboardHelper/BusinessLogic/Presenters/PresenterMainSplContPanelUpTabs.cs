@@ -1,6 +1,7 @@
-﻿using ClipboardHelperRegEx.Views;
+﻿using ClipboardHelper.Views;
 using ClipboardHelperRegEx.ModifiedControls;
 using ClipboardHelperRegEx.Properties;
+using ClipboardHelperRegEx.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,6 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ClipboardHelper.Views;
 
 namespace ClipboardHelperRegEx.BusinessLogic.Presenters
 {
@@ -145,6 +145,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
         private void UiKeyNavigation_OnAnyDigitKeyUp(object sender, EventArgs e)
         {
             var index = ListboxSelected.SelectedIndex;
+            if (index == -1) return;
             ListboxSelected.SelectedIndices.Remove(index);
             _listboxMultiSelection.HandleKeyUp(index);
         }
@@ -152,6 +153,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
         private void UiKeyNavigation_OnNavigationUp(object sender, EventArgs e)
         {
             var index = ListboxSelected.SelectedIndex - 1;
+            if (index == -2) return;
             ListboxSelected.SelectedIndices.Remove(index + 1);
             if (ListboxSelected.SelectedItems.Count > 1) ListboxSelected.ClearSelected();
             _listboxMultiSelection.HandleKeyUp(index);
@@ -160,6 +162,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
         private void UiKeyNavigation_OnNavigationDown(object sender, EventArgs e)
         {
             var index = ListboxSelected.SelectedIndex + 1;
+            if (index == 0) return;
             ListboxSelected.SelectedIndices.Remove(index - 1);
             if (ListboxSelected.SelectedItems.Count > 1) ListboxSelected.ClearSelected();
             _listboxMultiSelection.HandleKeyUp(index);
@@ -185,16 +188,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                     _view.TriggerEventOnNewClipboardText(EventArgs.Empty); //Triggers event to show the app if hidden.
                     if (_view.TabControl.SelectedIndex != 0)
                         _view.TabControl.SelectedIndex = 0;
-                    //try
-                    //{
                     FillOneOrManyAutoOrManualListBoxesWithContent(LineChangeType.AutoMulti);
-                    //}
-                    //catch (Exception e)
-                    //{
-                    //    Console.WriteLine(e);
-                    //    FillOneOrManyAutoOrManualListBoxesWithContent(LineChangeType.AutoMulti);
-                    //}
-
                     if (!_viewMain.Visible)
                     {
                         if (!_settings.AppearanceFocus)
@@ -308,39 +302,40 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                 Pasting_MultiPastingDeactivated(sender, PastingDeactivatedEventArgs.Empty);
             _pasting?.Cancel();
             ListboxSelected = null;
-            if (_view.TabControl.SelectedIndex == 0)
-            {
-                if (_listBoxAuto != null)
+            if (_view.TabControl.SelectedIndex != -1)
+                if (_view.TabControl.SelectedIndex == 0)
                 {
-                    _listBoxAuto.ClearSelected();
-                    ListboxSelected = _listBoxAuto;
-                    _uiKeyNavigation.Cancel();
-                    _uiKeyNavigation = null;
-                    _uiKeyNavigation = new UIKeyNavigation(ListboxSelected, _view.TabControl);
-                    ListboxSelected.Focus();
-                }
+                    if (_listBoxAuto != null)
+                    {
+                        _listBoxAuto.ClearSelected();
+                        ListboxSelected = _listBoxAuto;
+                        _uiKeyNavigation.Cancel();
+                        _uiKeyNavigation = null;
+                        _uiKeyNavigation = new UIKeyNavigation(ListboxSelected, _view.TabControl);
+                        ListboxSelected.Focus();
+                    }
 
-                _viewMainSplContPanelDown.HistoryLeft.Visible = _historyLeftVisible;
-                _viewMainSplContPanelDown.HistoryRight.Visible = _historyRightVisible;
-                _viewMainSplContPanelDown.Position.Visible = true;
-            }
-            else
-            {
-                if (_view.ListBoxesManual.Count != 0)
+                    _viewMainSplContPanelDown.HistoryLeft.Visible = _historyLeftVisible;
+                    _viewMainSplContPanelDown.HistoryRight.Visible = _historyRightVisible;
+                    _viewMainSplContPanelDown.Position.Visible = true;
+                }
+                else
                 {
-                    ListboxSelected = _view.ListBoxesManual[_view.TabControl.SelectedIndex - 1];
-                    _uiKeyNavigation.Cancel();
-                    _uiKeyNavigation = null;
-                    _uiKeyNavigation = new UIKeyNavigation(ListboxSelected, _view.TabControl);
-                    ListboxSelected.Focus();
-                    if (_view.ListBoxesManual[_view.TabControl.SelectedIndex - 1].SelectedItems.Count > 0)
-                        _view.ListBoxesManual[_view.TabControl.SelectedIndex - 1]?.ClearSelected();
-                }
+                    if (_view.ListBoxesManual.Count != 0)
+                    {
+                        ListboxSelected = _view.ListBoxesManual[_view.TabControl.SelectedIndex - 1];
+                        _uiKeyNavigation.Cancel();
+                        _uiKeyNavigation = null;
+                        _uiKeyNavigation = new UIKeyNavigation(ListboxSelected, _view.TabControl);
+                        ListboxSelected.Focus();
+                        if (_view.ListBoxesManual[_view.TabControl.SelectedIndex - 1].SelectedItems.Count > 0)
+                            _view.ListBoxesManual[_view.TabControl.SelectedIndex - 1]?.ClearSelected();
+                    }
 
-                _viewMainSplContPanelDown.HistoryLeft.Visible = false;
-                _viewMainSplContPanelDown.HistoryRight.Visible = false;
-                _viewMainSplContPanelDown.Position.Visible = false;
-            }
+                    _viewMainSplContPanelDown.HistoryLeft.Visible = false;
+                    _viewMainSplContPanelDown.HistoryRight.Visible = false;
+                    _viewMainSplContPanelDown.Position.Visible = false;
+                }
 
             CancelAndInitiateNewMultiSelectionAndUiNavigation();
             SubscribeToEvents();

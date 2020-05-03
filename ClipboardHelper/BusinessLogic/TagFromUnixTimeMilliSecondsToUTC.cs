@@ -18,17 +18,17 @@ namespace ClipboardHelperRegEx.BusinessLogic
                 return "Couldn't parse Unix timestamp, it's empty";
             // ReSharper disable once RedundantIfElseBlock (reSharper displays wrong)
             else
-            //try
-            {
-                var timeStamp = UnixTimeStampToDateTime(Convert.ToDouble(unixTimestamp, CultureInfo.InvariantCulture));
+                try
+                {
+                    var timeStamp = UnixTimeStampToDateTime(Convert.ToDouble(unixTimestamp, CultureInfo.InvariantCulture));
                     timeStamp = timeStamp.AddHours(double.Parse(splitContent[1], CultureInfo.InvariantCulture));
                     return timeStamp.ToString(CultureInfo.InvariantCulture);
-            }
-            //catch (Exception)
-            //{
-            //    //return "[]";
-            //    throw;
-            //}
+                }
+                catch (Exception)
+                {
+                    return "[]";
+                    //throw;
+                }
         }
 
         private static DateTime UnixTimeStampToDateTime(double unixTimeStamp)

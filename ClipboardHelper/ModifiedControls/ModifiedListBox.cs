@@ -79,7 +79,7 @@ namespace ClipboardHelperRegEx.ModifiedControls
             catch (Exception)
             {
                 _line = ""; //this is only a fix for the design view, unclear why it gives an error.
-                throw;
+                //throw;
             }
 
             _isItemSelected = (e.State & DrawItemState.Selected) == DrawItemState.Selected;

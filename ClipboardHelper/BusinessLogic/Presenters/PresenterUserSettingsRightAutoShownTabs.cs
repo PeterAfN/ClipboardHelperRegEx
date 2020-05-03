@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
 namespace ClipboardHelperRegEx.BusinessLogic.Presenters
 {
@@ -371,10 +370,10 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                 {
                     //try
                     //{
-                        _view.ListRightResult.Items.Clear();
-                        if (lines == null) return;
-                        // ReSharper disable once CoVariantArrayConversion
-                        _view.ListRightResult.Items.AddRange(lines.ToArray());
+                    _view.ListRightResult.Items.Clear();
+                    if (lines == null) return;
+                    // ReSharper disable once CoVariantArrayConversion
+                    _view.ListRightResult.Items.AddRange(lines.ToArray());
                     //}
                     //catch (Exception ex)
                     //{

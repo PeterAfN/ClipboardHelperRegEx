@@ -58,7 +58,7 @@ namespace ClipboardHelper.Views
 
         private void LinkLabel2_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/PeterAfN");
+            Process.Start("https://github.com/PeterAfN");
         }
     }
 }

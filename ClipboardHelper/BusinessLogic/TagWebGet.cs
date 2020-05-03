@@ -28,11 +28,11 @@ namespace ClipboardHelperRegEx.BusinessLogic
                     {
                         return e.ToString();
                     }
-                    //catch (Exception)
-                    //{
-                    //    //return e.ToString();
-                    //    throw;
-                    //}
+                    catch (Exception)
+                    {
+                        return string.Empty;
+                        //throw;
+                    }
                 case Tags.UsedIn.SingleSelection:
                 case Tags.UsedIn.NestedTags:
                 case Tags.UsedIn.Pasting:

@@ -40,7 +40,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
         {
             var result = _viewMain.Height -
                          (_view.SplitContainer.Panel1.ClientSize.Height - _view.SplitContainer.Panel1MinSize);
-            if(result > 0)
+            if (result > 0)
                 return new Size(_viewMain.MinimumSize.Width, _viewMain.Height -
                                                          (_view.SplitContainer.Panel1.ClientSize.Height -
                                                           _view.SplitContainer.Panel1MinSize));

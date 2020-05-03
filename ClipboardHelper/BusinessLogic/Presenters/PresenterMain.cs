@@ -1,5 +1,6 @@
-﻿using ClipboardHelperRegEx.Views;
+﻿using ClipboardHelper.Views;
 using ClipboardHelperRegEx.Properties;
+using ClipboardHelperRegEx.Views;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,6 @@ using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Windows.Forms;
-using ClipboardHelper.Views;
 
 namespace ClipboardHelperRegEx.BusinessLogic.Presenters
 {
@@ -526,7 +526,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                     catch (Exception ex)
                     {
                         MessageBox.Show(Resources.PresenterMain_OnMouseUpNotifyIconProgram_An_error_occured_when_setting_value_to_the_clipboard__ + ex, Resources.PresenterMain_OnMouseUpNotifyIconProgram_Clipboard_Helper_error, MessageBoxButtons.OK);
-                        throw;
+                        //throw;
                     }
 
                     break;

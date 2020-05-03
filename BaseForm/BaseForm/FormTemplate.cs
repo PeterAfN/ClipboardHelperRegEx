@@ -115,34 +115,34 @@ namespace Template
                     }
                 }
                 else switch (m.Msg)
+                {
+                    // Form shadow
+                    case Win32.WmNcpaint when FormShadowShown:
                     {
-                        // Form shadow
-                        case Win32.WmNcpaint when FormShadowShown:
-                            {
-                                var v = 2;
-                                NativeMethods.DwmSetWindowAttribute(Handle, 2, ref v, 4);
-                                var margins = new NativeMethods.Margins()
-                                {
-                                    BottomHeight = 1,
-                                    LeftWidth = 1,
-                                    RightWidth = 1,
-                                    TopHeight = 1
-                                };
-                                NativeMethods.DwmExtendFrameIntoClientArea(Handle, ref margins);
-                                handled = true;
-                                break;
-                            }
-                        case Win32.WmActivate:
-                            {
-                                if ((int)m.WParam == Win32.WaInactive)             // form inactive
-                                {
-                                    OnFormLostFocusToOutsideApp?.Invoke(this, new FormLostFocusToOutsideApp());
-                                    handled = true;
-                                }
-
-                                break;
-                            }
+                        var v = 2;
+                        NativeMethods.DwmSetWindowAttribute(Handle, 2, ref v, 4);
+                        var margins = new NativeMethods.Margins()
+                        {
+                            BottomHeight = 1,
+                            LeftWidth = 1,
+                            RightWidth = 1,
+                            TopHeight = 1
+                        };
+                        NativeMethods.DwmExtendFrameIntoClientArea(Handle, ref margins);
+                        handled = true;
+                        break;
                     }
+                    case Win32.WmActivate:
+                    {
+                        if ((int)m.WParam == Win32.WaInactive)             // form inactive
+                        {
+                            OnFormLostFocusToOutsideApp?.Invoke(this, new FormLostFocusToOutsideApp());
+                            handled = true;
+                        }
+
+                        break;
+                    }
+                }
             }
             if (!handled) base.WndProc(ref m);
         }

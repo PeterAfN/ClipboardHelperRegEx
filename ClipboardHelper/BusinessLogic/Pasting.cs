@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using WindowsInput;
@@ -397,8 +396,8 @@ namespace ClipboardHelperRegEx.BusinessLogic
             {
                 MessageBox.Show(Resources.Pasting_RemoveAndReturnFirstLine_An_error_occured_when_getting_the_next_item_to_paste__ + ex, Resources.Pasting_RemoveAndReturnFirstLine_Clipboard_Helper_error, MessageBoxButtons.OK);
                 Cancel();
-                //return string.Empty;
-                throw;
+                //throw;
+                return string.Empty;
             }
         }
 

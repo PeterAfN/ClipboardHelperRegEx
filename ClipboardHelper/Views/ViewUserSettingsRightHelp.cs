@@ -37,7 +37,7 @@ namespace ClipboardHelper.Views
 
         public LinkLabel LinkLabelHelp
         {
-            get { return LinkLabelHelp; }
+            get { return linkLabelHelp; }
         }
 
         //Removes almost all flickering when user control and its containing user controls are resized. This affects all controls.

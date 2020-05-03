@@ -182,9 +182,8 @@ namespace ClipboardHelperRegEx.BusinessLogic
                     Listbox.Enabled = true;
                 }
             }
-            catch (Exception)
+            catch
             {
-
                 SelectedIndexesOrdered = null;
                 SelectedItemsOrdered = null;
                 _mouseDownIndex = -1;
@@ -194,7 +193,7 @@ namespace ClipboardHelperRegEx.BusinessLogic
                 _mouseUpIndex = -1;
                 SelectionOld = null;
                 _shiftSelectionStartIndex = -1;
-                throw;
+                //throw;
             }
         }
 
@@ -282,7 +281,7 @@ namespace ClipboardHelperRegEx.BusinessLogic
                 }
                 catch (Exception)
                 {
-                    throw;
+                    //throw;
                 }
 
             return output;
