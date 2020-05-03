@@ -75,7 +75,7 @@
         <string>Caption(Other related stuff)   NotSelectableLine()</string>
         <string>Info(Vendor ID-Local file search) RegexCsvFileGet(   macvendor.csv   ;   Regex(RegexReplace([:_/;\-. ,];); ^\S{6})   ;   true   )</string>
         <string>Info(Vendor ID-Online search) WebGet(https://api.macvendors.com/RegexReplace([:_/;\-. ,] ;) )    </string>
-        <string>Info(Open link in web browser -&gt;)  https://api.macvendors.com/RegexReplace([:_/;\-. ,] ;) </string>
+        <string>Info(Open link in web browser -&gt;)  WebUrlGoTo(https://api.macvendors.com/RegexReplace([:_/;\-. ,] ;)) </string>
         <string>Info(Huawei switch-Find mac) disp mac-address | include RegexReplace(   RegexReplace([:_/;\-. ,] ; )   ;   (.{2})(.{2})(.{2})(.{2})(.{2})(.{2})   ;   $1$2-$3$4-$5$6   )</string>
         <string>Info(Huawei switch-Get mac Interface 0/0/X) display mac-address GigabitEthernet 0/0/X</string>
         <string>Info(Run power shell with commands -&gt;) echo "This computers mac addresses:"; getmac ConsoleOpen(echo "This computers mac addresses:"; getmac;)</string>
