@@ -20,7 +20,7 @@
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>C:\Users\peter\Documents\GitHub\ClickOnceInstallationFilesForClipboardHelperRegEx\publish\</PublishUrl>
+    <PublishUrl>C:\Users\peter\Documents\GitHub\InstallationFiles-ClipboardHelperRegEx\publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -30,8 +30,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://raw.githubusercontent.com/PeterAfN/ClickOnceInstallationFilesForClipboardHelperRegEx/master/publish/</InstallUrl>
-    <UpdateUrl>https://raw.githubusercontent.com/PeterAfN/ClickOnceForClipboardRegexPaster/master/publish/</UpdateUrl>
+    <InstallUrl>https://raw.githubusercontent.com/PeterAfN/InstallationFiles-ClipboardHelperRegEx/master/publish/</InstallUrl>
+    <UpdateUrl>https://raw.githubusercontent.com/PeterAfN/InstallationFiles-ClipboardHelperRegEx/master/publish/</UpdateUrl>
     <SupportUrl>https://github.com/PeterAfN/ClipboardHelperRegEx</SupportUrl>
     <ErrorReportUrl>https://github.com/PeterAfN/ClipboardHelperRegEx</ErrorReportUrl>
     <ProductName>ClipboardHelperRegEx</ProductName>
@@ -41,7 +41,7 @@
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>0.0.0.%2a</ApplicationVersion>
+    <ApplicationVersion>0.0.0.1</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
