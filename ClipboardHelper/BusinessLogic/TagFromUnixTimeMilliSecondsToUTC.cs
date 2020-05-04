@@ -14,7 +14,7 @@ namespace ClipboardHelperRegEx.BusinessLogic
             if (splitContent == null) return null;
             var unixTimestamp = splitContent[0];
             if (splitContent.Count != 2) return "Couldn't parse Unix timestamp.";
-            if (!string.IsNullOrEmpty(unixTimestamp))
+            if (string.IsNullOrEmpty(unixTimestamp))
                 return "Couldn't parse Unix timestamp, it's empty";
             // ReSharper disable once RedundantIfElseBlock (reSharper displays wrong)
             else

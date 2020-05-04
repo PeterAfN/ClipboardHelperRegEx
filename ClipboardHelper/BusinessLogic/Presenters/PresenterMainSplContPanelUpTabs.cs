@@ -514,9 +514,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                             catch (Exception e)
                             {
                                 MessageBox.Show("line 516: " +  e.Message);
-                               
                             }
-
                         }
                     else _viewMain.LabelTitleTop.Text = string.Empty;
 
@@ -539,11 +537,8 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                                 catch (Exception e)
                                 {
                                     MessageBox.Show("line 541: " + e.Message);
-                                 
                                 }
-
                             }
-
                     break;
                 case LineChangeType.AutoSingle:
                     break;
