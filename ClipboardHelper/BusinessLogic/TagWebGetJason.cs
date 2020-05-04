@@ -126,8 +126,9 @@ namespace ClipboardHelperRegEx.BusinessLogic
             }
             catch (Exception)
             {
+                throw;
                 return WhenDownloadingOfJsonFailed(webCred, jSn);
-                //throw;
+               
             }
         }
     }

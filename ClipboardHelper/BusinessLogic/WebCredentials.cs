@@ -40,6 +40,8 @@ namespace ClipboardHelperRegEx.BusinessLogic
         private bool SaveCredentials { get; set; }
         private string Fqdn { get; }
 
+        private object _dmn;
+
         public void Prompt()
         {
             var saveCredentials = SaveCredentials = true;
@@ -50,9 +52,7 @@ namespace ClipboardHelperRegEx.BusinessLogic
             else ResultFromPasswordPrompt = ResultsFromPasswordPrompt.Ok;
             if (_cred != null) Usr = _cred.UserName;
             if (_cred != null) Pwd = _cred.SecurePassword;
-            if (_cred != null)
-            {
-            }
+            if (_cred != null) _dmn = _cred.Domain;
 
             SaveCredentials = saveCredentials;
         }
@@ -65,6 +65,7 @@ namespace ClipboardHelperRegEx.BusinessLogic
                 return false;
             Usr = _cred.UserName;
             Pwd = _cred.SecurePassword;
+            _dmn = _cred.Domain;
             return true;
         }
 
@@ -73,6 +74,7 @@ namespace ClipboardHelperRegEx.BusinessLogic
             foreach (var tempCred in Temporary.Where(tempCred => tempCred.Item1 == Fqdn))
             {
                 Usr = tempCred.Item2;
+                _dmn = tempCred.Item3;
                 Pwd = tempCred.Item4;
                 return true;
             }
