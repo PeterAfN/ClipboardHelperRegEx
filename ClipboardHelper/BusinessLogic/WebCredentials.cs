@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Security;
+using System.Windows.Forms;
 
 namespace ClipboardHelperRegEx.BusinessLogic
 {
@@ -59,13 +60,18 @@ namespace ClipboardHelperRegEx.BusinessLogic
 
         public bool Saved()
         {
+            MessageBox.Show("1");
             if (string.IsNullOrEmpty(Fqdn)) return false;
+            MessageBox.Show("2");
             _cred = CredentialManager.GetCredentials(Fqdn);
+            MessageBox.Show("3");
             if (_cred == null)
                 return false;
+            MessageBox.Show("4");
             Usr = _cred.UserName;
             Pwd = _cred.SecurePassword;
             _dmn = _cred.Domain;
+            MessageBox.Show("5");
             return true;
         }
 

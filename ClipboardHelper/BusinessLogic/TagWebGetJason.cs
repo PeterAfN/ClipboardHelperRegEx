@@ -38,53 +38,65 @@ namespace ClipboardHelperRegEx.BusinessLogic
 
         private string WebGetJson(string url, string jsonField)
         {
+            System.Windows.Forms.MessageBox.Show("a");
             if (!Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out var uri)) return null;
+            System.Windows.Forms.MessageBox.Show("b");
             var webCredentials = new WebCredentials(uri);
+            System.Windows.Forms.MessageBox.Show("c");
             _jSon.Url = uri;
             string outData;
             if (_jSon.Cached())
                 return _jSon.GetField(_jSon.CurrentCached, jsonField);
+            System.Windows.Forms.MessageBox.Show("d");
             if (webCredentials.SavedTemporary() || webCredentials.Saved())
                 try
                 {
+                    System.Windows.Forms.MessageBox.Show("e");
                     outData = _jSon.Download(TimeoutJson, webCredentials.Usr.ToString(), webCredentials.Pwd);
                     _jSon.Cache();
                     return _jSon.GetField(outData, jsonField);
                 }
                 catch (WebException ex) when (ex.Message.Contains("401"))
                 {
+                    System.Windows.Forms.MessageBox.Show("f");
                     outData = WhenDownloadingOfJsonFailed(webCredentials, _jSon);
                     return _jSon.GetField(outData, jsonField);
                 }
                 catch (WebException ex)
                 {
+                    System.Windows.Forms.MessageBox.Show("g");
                     return ex.Message;
                 }
                 catch (Exception)
                 {
+                    System.Windows.Forms.MessageBox.Show("h");
                     outData = WhenDownloadingOfJsonFailed(webCredentials, _jSon);
                     return _jSon.GetField(outData, jsonField);
                     //throw;
                 }
             try
             {
+                System.Windows.Forms.MessageBox.Show("i");
                 outData = _jSon.Download(TimeoutJson);
                 _jSon.Cache();
                 return _jSon.GetField(outData, jsonField);
             }
             catch (WebException ex) when (ex.Message.Contains("401"))
             {
+                System.Windows.Forms.MessageBox.Show("j");
                 outData = WhenDownloadingOfJsonFailed(webCredentials, _jSon);
                 return _jSon.GetField(outData, jsonField);
             }
             catch (WebException ex)
             {
+                System.Windows.Forms.MessageBox.Show("k");
                 _jSon.Downloaded = ex.Message;
                 _jSon.Cache();
                 return ex.Message;
             }
             catch
             {
+                System.Windows.Forms.MessageBox.Show("l");
                 outData = WhenDownloadingOfJsonFailed(webCredentials, _jSon);
 
                 return _jSon.GetField(outData, jsonField);
@@ -94,20 +106,24 @@ namespace ClipboardHelperRegEx.BusinessLogic
 
         private string WhenDownloadingOfJsonFailed(WebCredentials webCredentials, JsonMethods jSon)
         {
+            System.Windows.Forms.MessageBox.Show("m");
             var webCred = webCredentials;
             var jSn = jSon;
             try
             {
+                System.Windows.Forms.MessageBox.Show("n");
                 webCredentials.Prompt();
                 string outData;
                 switch (webCredentials.ResultFromPasswordPrompt)
                 {
                     case WebCredentials.ResultsFromPasswordPrompt.Ok:
+                        System.Windows.Forms.MessageBox.Show("o");
                         webCredentials.Save();
                         outData = jSon.Download(TimeoutJson, webCred.Usr.ToString(), webCred.Pwd);
                         jSn.Cache();
                         return outData;
                     case WebCredentials.ResultsFromPasswordPrompt.OkNoSave:
+                        System.Windows.Forms.MessageBox.Show("p");
                         webCredentials.SaveTemporary();
                         outData = jSon.Download(TimeoutJson, webCred.Usr.ToString(), webCred.Pwd);
                         jSn.Cache();
@@ -118,14 +134,17 @@ namespace ClipboardHelperRegEx.BusinessLogic
             }
             catch (WebException ex) when (ex.Message.Contains("401"))
             {
+                System.Windows.Forms.MessageBox.Show("q");
                 return WhenDownloadingOfJsonFailed(webCred, jSn);
             }
             catch (WebException ex)
             {
+                System.Windows.Forms.MessageBox.Show("r");
                 return ex.Message;
             }
             catch (Exception)
             {
+                System.Windows.Forms.MessageBox.Show("s");
                 throw;
                 return WhenDownloadingOfJsonFailed(webCred, jSn);
                
