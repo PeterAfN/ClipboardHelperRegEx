@@ -109,32 +109,26 @@ namespace ClipboardHelperRegEx.BusinessLogic
             ManualSourceFilePath = Path.Combine(Application.StartupPath, @"Resources\" + "ManuallyShownTabs.xml");
             AutoDestFilePath = Path.Combine(ExeFilePath, "AutoShownTabs.xml");
             ManualDestFilePath = Path.Combine(ExeFilePath, "ManuallyShownTabs.xml");
-            MessageBox.Show("1 FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
             if (!Directory.Exists(ExeFilePath))
             {
-                MessageBox.Show("2 FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
                 Directory.CreateDirectory(ExeFilePath);
             }
 
             if (!File.Exists(AutoDestFilePath))
             {
-                MessageBox.Show("3 FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
                 File.Copy(AutoSourceFilePath, AutoDestFilePath, true);
             }
-            else
+            else if (FirstRunEver) //If xml and file exists --> merge
             {
-                MessageBox.Show("4 FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
                 MergeNewXmlWithOldXmlAuto();
             }
 
             if (!File.Exists(ManualDestFilePath))
             {
-                MessageBox.Show("5 FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
                 File.Copy(ManualSourceFilePath, ManualDestFilePath, true);
             }
             else if (FirstRunEver) //If xml and file exists --> merge
             {
-                MessageBox.Show("merge FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
                 MergeNewXmlWithOldXmlManual();
             }
             
@@ -201,18 +195,13 @@ namespace ClipboardHelperRegEx.BusinessLogic
             //When running from Visual Studio it checks for files present at
             //C:\Users\(Windows username)\AppData\Local\(Visual Studio username)\ClipboardHelper.exe_Url_asz4r5fvkztxm1n0xfptltiaxswjw20q
             //Version is changed in AssemblyVersion in AssemblyInfo.cs
-
-            MessageBox.Show("a FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
             if (Debugger.IsAttached)
             {
-                MessageBox.Show("b FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
                 if (Settings.Default.UpgradeRequired)
                 {
                     //First time running the program with this version.
-                    MessageBox.Show("c FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
                     FirstRunThisVersion = true;
                     // ReSharper disable once LocalizableElement
-                    //MessageBox.Show("First time running the program with this version from Visual Studio");
                     Settings.Default.Upgrade();
                     Settings.Default.Reload();
                     Settings.Default.UpgradeRequired = false;
@@ -221,34 +210,26 @@ namespace ClipboardHelperRegEx.BusinessLogic
 
                 if (!Settings.Default.FirstTimeRunForThisVersion) return;
                 //First time ever running the program.
-                MessageBox.Show("d FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
                 FirstRunEver = true;
                 // ReSharper disable once LocalizableElement
-                //MessageBox.Show("First time ever running the program from Visual Studio");
                 Settings.Default.FirstTimeRunForThisVersion = false;
                 Settings.Default.Save();
             }
             //If NOT running from Visual Studio then it checks for the ClickOnce version.
             else
             {
-                MessageBox.Show("e FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
                 if (Settings.Default.FirstTimeRunForThisVersion)
                 {
                     //First time ever running the program.
-                    MessageBox.Show("f FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
                     FirstRunEver = true;
                     // ReSharper disable once LocalizableElement
-                    //MessageBox.Show("First time ever running the program from exe");
                     Settings.Default.FirstTimeRunForThisVersion = false;
                     Settings.Default.Save();
                 }
-                MessageBox.Show("g FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
                 if (!System.Deployment.Application.ApplicationDeployment.CurrentDeployment.IsFirstRun) return;
                 //First time running the program with this version.
-                MessageBox.Show("h FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
                 FirstRunThisVersion = true;
                 // ReSharper disable once LocalizableElement
-                //MessageBox.Show("First time running the program with this version from exe");
                 Settings.Default.Upgrade();
                 Settings.Default.Reload();
                 Settings.Default.UpgradeRequired = false;
