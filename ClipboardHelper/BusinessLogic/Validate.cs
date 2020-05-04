@@ -34,9 +34,10 @@ namespace ClipboardHelperRegEx.BusinessLogic
             _dialog = new ViewDialog();
             _dialog.ClickOkMouseButton += Dialog_ClickOkMouseButton;
             _dialog.ClickCancelMouseButton += Dialog_ClickCancelMouseButton;
+            SettingsFiles();
             DataFilesUserHasAdded();
             DataFilesIncludedFromStart();
-            SettingsFiles();
+
         }
 
         public static bool FirstRunThisVersion { get; private set; }
