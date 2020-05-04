@@ -1,102 +1,109 @@
-﻿using AdysTech.CredentialManager;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Security;
-using System.Windows.Forms;
+using AdysTech.CredentialManager;
 
 namespace ClipboardHelperRegEx.BusinessLogic
 {
+
     public class WebCredentials
     {
-        public enum ResultsFromPasswordPrompt
+
+        public WebCredentials(string url)
         {
-            Ok,
-            OkNoSave,
-            Cancel
+            this.Url = url;
+            Uri uri = new Uri(Url, UriKind.Absolute);
+            FQDN = uri.Host;
         }
 
-        /// <summary>
-        ///     First string is FQDN, second string is Username, third string is domain name, fourth securestring is Password.
-        /// </summary>
-        private static readonly List<Tuple<string, string, string, SecureString>> Temporary =
-            new List<Tuple<string, string, string, SecureString>>();
 
-        private NetworkCredential _cred;
-        public SecureString Pwd { get; private set; }
-        public object Usr { get; private set; }
+        NetworkCredential cred;
+        public object usr;
+        public SecureString pwd;
+        public object dmn;
+        public ResultsFromPasswordPrompt ResultFromPasswordPrompt { get; set; }
+        public enum ResultsFromPasswordPrompt { Ok, OkNoSave, Cancel }
+        public string Url { get; set; }
+        public bool SaveCredentials { get; set; }
+        public string FQDN { get; set; }
 
-        public WebCredentials(Uri url)
-        {
-            Url = url;
-            if (Url == null) return;
-            var uri = new Uri(Url.ToString());
-            Fqdn = uri.Host;
-        }
-
-        public ResultsFromPasswordPrompt ResultFromPasswordPrompt { get; private set; }
-
-        private Uri Url { get; }
-        private bool SaveCredentials { get; set; }
-        private string Fqdn { get; }
-
-        private object _dmn;
 
         public void Prompt()
         {
-            var saveCredentials = SaveCredentials = true;
-            _cred = CredentialManager.PromptForCredentials(Fqdn, ref saveCredentials,
-                "Please provide credentials for " + Fqdn, "Clipboard Helper");
-            if (_cred == null) ResultFromPasswordPrompt = ResultsFromPasswordPrompt.Cancel;
-            else if (saveCredentials == false) ResultFromPasswordPrompt = ResultsFromPasswordPrompt.OkNoSave;
-            else ResultFromPasswordPrompt = ResultsFromPasswordPrompt.Ok;
-            if (_cred != null) Usr = _cred.UserName;
-            if (_cred != null) Pwd = _cred.SecurePassword;
-            if (_cred != null) _dmn = _cred.Domain;
-
-            SaveCredentials = saveCredentials;
+            try
+            {
+                bool saveCredentials = SaveCredentials = true;
+                cred = CredentialManager.PromptForCredentials(FQDN, ref saveCredentials, "Please provide credentials for " + FQDN, "Clipboard Helper");
+                if (cred == null) ResultFromPasswordPrompt = ResultsFromPasswordPrompt.Cancel;
+                else if (saveCredentials == false) ResultFromPasswordPrompt = ResultsFromPasswordPrompt.OkNoSave;
+                else ResultFromPasswordPrompt = ResultsFromPasswordPrompt.Ok;
+                if (cred != null) usr = cred.UserName;
+                if (cred != null) pwd = cred.SecurePassword;
+                if (cred != null) dmn = cred.Domain;
+                SaveCredentials = saveCredentials;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
+
+
+        private NetworkCredential Get(string webAddress)
+        {
+            return cred = CredentialManager.GetCredentials(FQDN);
+        }
+
 
         public bool Saved()
         {
-            //MessageBox.Show("1");
-            if (string.IsNullOrEmpty(Fqdn)) return false;
-            //MessageBox.Show("2");
-            _cred = CredentialManager.GetCredentials(Fqdn);
-            //MessageBox.Show("3");
-            if (_cred == null)
+            if (FQDN == string.Empty) return false;
+            cred = CredentialManager.GetCredentials(FQDN);
+            if (cred == null)
                 return false;
-            //MessageBox.Show("4");
-            Usr = _cred.UserName;
-            Pwd = _cred.SecurePassword;
-            _dmn = _cred.Domain;
-            // MessageBox.Show("5");
-            return true;
+            else
+            {
+                usr = cred.UserName;
+                pwd = cred.SecurePassword;
+                dmn = cred.Domain;
+                return true;
+            }
         }
+
 
         public bool SavedTemporary()
         {
-            foreach (var tempCred in Temporary.Where(tempCred => tempCred.Item1 == Fqdn))
+            foreach (Tuple<string, string, string, SecureString> tempCred in temporary)
             {
-                Usr = tempCred.Item2;
-                _dmn = tempCred.Item3;
-                Pwd = tempCred.Item4;
-                return true;
+                if (tempCred.Item1 == FQDN)
+                {
+                    usr = tempCred.Item2;
+                    dmn = tempCred.Item3;
+                    pwd = tempCred.Item4;
+                    return true;
+                }
             }
-
             return false;
         }
 
+
         public void Save()
         {
-            if (SaveCredentials) CredentialManager.SaveCredentials(Fqdn, _cred);
+            if (SaveCredentials) CredentialManager.SaveCredentials(FQDN, cred);
         }
+
+
+        /// <summary>
+        /// First string is FQDN, second string is Username, third string is domain name, fourth securestring is Password.
+        /// </summary>
+        static readonly List<Tuple<string, string, string, SecureString>> temporary = new List<Tuple<string, string, string, SecureString>>();
+
 
         public void SaveTemporary()
         {
-            Temporary.Add(new Tuple<string, string, string, SecureString>(Fqdn, _cred.UserName, _cred.Domain,
-                _cred.SecurePassword));
+            temporary.Add(new Tuple<string, string, string, SecureString>(FQDN, cred.UserName, cred.Domain, cred.SecurePassword));
         }
+
     }
 }

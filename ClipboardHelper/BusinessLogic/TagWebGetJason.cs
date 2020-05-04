@@ -39,11 +39,11 @@ namespace ClipboardHelperRegEx.BusinessLogic
         private string WebGetJson(string url, string jsonField)
         {
             //System.Windows.Forms.MessageBox.Show("a");
-            if (!Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out var uri)) return null;
+            //if (!Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out var uri)) return null;
             //System.Windows.Forms.MessageBox.Show("b");
-            var webCredentials = new WebCredentials(uri);
+            var webCredentials = new WebCredentials(url);
             //System.Windows.Forms.MessageBox.Show("c");
-            _jSon.Url = uri;
+            _jSon.Url = url;
             string outData;
             if (_jSon.Cached())
                 return _jSon.GetField(_jSon.CurrentCached, jsonField);
@@ -52,7 +52,7 @@ namespace ClipboardHelperRegEx.BusinessLogic
                 try
                 {
                     //System.Windows.Forms.MessageBox.Show("e");
-                    outData = _jSon.Download(TimeoutJson, webCredentials.Usr.ToString(), webCredentials.Pwd);
+                    outData = _jSon.Download(TimeoutJson, webCredentials.usr.ToString(), webCredentials.pwd);
                     _jSon.Cache();
                     return _jSon.GetField(outData, jsonField);
                 }
@@ -119,13 +119,13 @@ namespace ClipboardHelperRegEx.BusinessLogic
                     case WebCredentials.ResultsFromPasswordPrompt.Ok:
                         //System.Windows.Forms.MessageBox.Show("o");
                         webCredentials.Save();
-                        outData = jSon.Download(TimeoutJson, webCred.Usr.ToString(), webCred.Pwd);
+                        outData = jSon.Download(TimeoutJson, webCred.usr.ToString(), webCred.pwd);
                         jSn.Cache();
                         return outData;
                     case WebCredentials.ResultsFromPasswordPrompt.OkNoSave:
                         //System.Windows.Forms.MessageBox.Show("p");
                         webCredentials.SaveTemporary();
-                        outData = jSon.Download(TimeoutJson, webCred.Usr.ToString(), webCred.Pwd);
+                        outData = jSon.Download(TimeoutJson, webCred.usr.ToString(), webCred.pwd);
                         jSn.Cache();
                         return outData;
                     default:
