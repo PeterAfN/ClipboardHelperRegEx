@@ -506,7 +506,17 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                                 t.RegEx)) continue;
                             MakeSpecificListboxReady(t.Items.Count, LineChangeType.AutoMulti);
                             _view.GroupBoxAuto.Text = t.Name;
-                            TransformLinesForOneListbox(_view.NavigationPosition, _view.NavigationPositionAndId.Values[_view.NavigationPosition], LineChangeType.AutoMulti, t.Items);
+                            try
+                            {
+                                //if (_view.NavigationPositionAndId.Values.Count < _view.NavigationPosition)
+                                    TransformLinesForOneListbox(_view.NavigationPosition, _view.NavigationPositionAndId.Values[_view.NavigationPosition], LineChangeType.AutoMulti, t.Items);
+                            }
+                            catch (Exception e)
+                            {
+                                MessageBox.Show("line 516: " +  e.Message);
+                               
+                            }
+
                         }
                     else _viewMain.LabelTitleTop.Text = string.Empty;
 
@@ -520,8 +530,18 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                                         .Lines.Count,
                                     LineChangeType.ManualMulti,
                                     i);
-                                TransformLinesForOneListbox(_view.NavigationPosition, _view.NavigationPositionAndId.Values[_view.NavigationPosition], LineChangeType.ManualMulti,
-                                    _view.ManuallyShownTabsRam.List[i].Lines, i);
+                                try
+                                {
+                                    //if (_view.NavigationPositionAndId.Values.Count < _view.NavigationPosition)
+                                        TransformLinesForOneListbox(_view.NavigationPosition, _view.NavigationPositionAndId.Values[_view.NavigationPosition], LineChangeType.ManualMulti,
+                                            _view.ManuallyShownTabsRam.List[i].Lines, i);
+                                }
+                                catch (Exception e)
+                                {
+                                    MessageBox.Show("line 541: " + e.Message);
+                                 
+                                }
+
                             }
 
                     break;
@@ -705,13 +725,21 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                             ListboxSelected.UiThread
                             (delegate
                             {
-                                if (_listBoxAuto.Items.Count < lineIndex) return;
-                                if (_listBoxAuto.Items[lineIndex] == null) return;
-                                _listBoxAuto.Items.RemoveAt(lineIndex);
-                                if (lines.Count > 1)
-                                    _listBoxAuto.Items.Insert(lineIndex, lines.ElementAt(lineIndex));
-                                else if (lines.Count == 1)
-                                    _listBoxAuto.Items.Insert(lineIndex, lines.ElementAt(0));
+                                try
+                                {
+                                    if (_listBoxAuto.Items.Count <= lineIndex) return;
+                                    if (_listBoxAuto.Items[lineIndex] == null) return;
+                                    _listBoxAuto.Items.RemoveAt(lineIndex);
+                                    if (lines.Count > 1)
+                                        _listBoxAuto.Items.Insert(lineIndex, lines.ElementAt(lineIndex));
+                                    else if (lines.Count == 1)
+                                        _listBoxAuto.Items.Insert(lineIndex, lines.ElementAt(0));
+                                }
+                                catch (Exception e)
+                                {
+                                    MessageBox.Show("line 740: " + e.Message);
+                                    throw;
+                                }
                             }
                             );
                         break;
@@ -730,15 +758,23 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                             ListboxSelected.UiThread
                             (delegate
                             {
-                                if (_view.ListBoxesManual[tabIndexManual].Items.Count < lineIndex) return;
-                                if (_view.ListBoxesManual[tabIndexManual] == null) return;
-                                _view.ListBoxesManual[tabIndexManual].Items.RemoveAt(lineIndex);
-                                if (lines.Count > 1)
-                                    _view.ListBoxesManual[tabIndexManual].Items
-                                        .Insert(lineIndex, lines.ElementAt(lineIndex));
-                                else if (lines.Count == 1)
-                                    _view.ListBoxesManual[tabIndexManual].Items
-                                        .Insert(lineIndex, lines.ElementAt(0));
+                                try
+                                {
+                                    if (_view.ListBoxesManual[tabIndexManual].Items.Count <= lineIndex) return;
+                                    if (_view.ListBoxesManual[tabIndexManual] == null) return;
+                                    _view.ListBoxesManual[tabIndexManual].Items.RemoveAt(lineIndex);
+                                    if (lines.Count > 1)
+                                        _view.ListBoxesManual[tabIndexManual].Items
+                                            .Insert(lineIndex, lines.ElementAt(lineIndex));
+                                    else if (lines.Count == 1)
+                                        _view.ListBoxesManual[tabIndexManual].Items
+                                            .Insert(lineIndex, lines.ElementAt(0));
+                                }
+                                catch (Exception e)
+                                {
+                                    MessageBox.Show("line 775: " + e.Message);
+                                    throw;
+                                }
                             }
                             );
                         break;

@@ -14,8 +14,6 @@ namespace ClipboardHelperRegEx.BusinessLogic
             _jSon = new JsonMethods();
         }
 
-        private int TimeoutJson { get; } = 10000;
-
         public string Handle(string line, List<string> splitContent)
         {
             if (splitContent != null && splitContent.Count == 3)
@@ -52,7 +50,7 @@ namespace ClipboardHelperRegEx.BusinessLogic
                 try
                 {
                     //System.Windows.Forms.MessageBox.Show("e");
-                    outData = _jSon.Download(TimeoutJson, webCredentials.usr.ToString(), webCredentials.pwd);
+                    outData = _jSon.Download(webCredentials.Usr.ToString(), webCredentials.Pwd);
                     _jSon.Cache();
                     return _jSon.GetField(outData, jsonField);
                 }
@@ -77,7 +75,7 @@ namespace ClipboardHelperRegEx.BusinessLogic
             try
             {
                 //System.Windows.Forms.MessageBox.Show("i");
-                outData = _jSon.Download(TimeoutJson);
+                outData = _jSon.Download();
                 _jSon.Cache();
                 return _jSon.GetField(outData, jsonField);
             }
@@ -119,13 +117,13 @@ namespace ClipboardHelperRegEx.BusinessLogic
                     case WebCredentials.ResultsFromPasswordPrompt.Ok:
                         //System.Windows.Forms.MessageBox.Show("o");
                         webCredentials.Save();
-                        outData = jSon.Download(TimeoutJson, webCred.usr.ToString(), webCred.pwd);
+                        outData = jSon.Download(webCred.Usr.ToString(), webCred.Pwd);
                         jSn.Cache();
                         return outData;
                     case WebCredentials.ResultsFromPasswordPrompt.OkNoSave:
                         //System.Windows.Forms.MessageBox.Show("p");
                         webCredentials.SaveTemporary();
-                        outData = jSon.Download(TimeoutJson, webCred.usr.ToString(), webCred.pwd);
+                        outData = jSon.Download(webCred.Usr.ToString(), webCred.Pwd);
                         jSn.Cache();
                         return outData;
                     default:

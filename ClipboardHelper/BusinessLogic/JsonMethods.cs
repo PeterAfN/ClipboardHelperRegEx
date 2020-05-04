@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Security;
@@ -62,12 +63,9 @@ namespace ClipboardHelperRegEx.BusinessLogic
                             ? null : p.Value));
                 foreach (var kvp in JsonResult)
                 {
-                    if (kvp.Key.ToString() != null)
+                    if (jsonField == kvp.Key)
                     {
-                        if (jsonField == kvp.Key.ToString())
-                        {
-                            return kvp.Value.ToString();
-                        }
+                        return kvp.Value.ToString();
                     }
                 }
                 return "";
@@ -77,14 +75,14 @@ namespace ClipboardHelperRegEx.BusinessLogic
 
 
         //https://stackoverflow.com/questions/11118712/webclient-accessing-page-with-credentials
-        public string Download(int timeout, string usr = "", SecureString psw = null)
+        public string Download(string usr = "", SecureString psw = null)
         {
-            using (System.Net.WebClient client = new System.Net.WebClient())
+            using (var client = new System.Net.WebClient())
             {
-                if (usr == string.Empty)
+                if (string.IsNullOrEmpty(usr))
                 {
                     client.UseDefaultCredentials = false;
-                    Downloaded = DownloadJsonFromUrl(client, timeout, Url);
+                    Downloaded = DownloadJsonFromUrl(client, Url);
                     return Downloaded;
                 }
                 else
@@ -92,21 +90,16 @@ namespace ClipboardHelperRegEx.BusinessLogic
                     client.UseDefaultCredentials = true;
                     client.Credentials =
                         new NetworkCredential(usr, psw);
-                    Downloaded = DownloadJsonFromUrl(client, timeout, Url);
+                    Downloaded = DownloadJsonFromUrl(client, Url);
                     return Downloaded;
                 }
             }
         }
 
 
-        private static string DownloadJsonFromUrl(System.Net.WebClient client, int timeout, string url)
+        private static string DownloadJsonFromUrl(System.Net.WebClient client, string url)
         {
-            string downloadedString;
-            //client.Timeout = timeout;
-            downloadedString = client.DownloadString(url);
-            if (downloadedString == null || downloadedString == string.Empty)
-                return string.Empty;
-            return downloadedString;
+            return client.DownloadString(url);
         }
 
 
