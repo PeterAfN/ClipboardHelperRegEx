@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
     AssemblyDescription(
 "ClipboardHelperRegEx can automatically detect if text changes in Windows Clipboard. It can display a list of selectable texts depending on which new text is in the Clipboard. The selected text is then automatically set in to the Clipboard for pasting later. Regular expression are used to match specific new text content in the Clipboard with a specific list.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("PeterPalosaari@live.se")]
+[assembly: AssemblyCompany("https://github.com/PeterAfN/ClipboardHelperRegEx")]
 [assembly: AssemblyProduct("ClipboardHelperRegEx")]
 [assembly: AssemblyCopyright("GNU General Public License v3.0")]
 [assembly: AssemblyTrademark("")]
@@ -33,5 +33,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("0.0.*")]
-[assembly: AssemblyVersion("0.0.0.19")]
-[assembly: AssemblyFileVersion("0.0.0.19")]
+[assembly: AssemblyVersion("0.0.0.20")]
+[assembly: AssemblyFileVersion("0.0.0.20")]
