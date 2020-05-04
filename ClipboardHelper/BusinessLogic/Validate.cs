@@ -109,20 +109,35 @@ namespace ClipboardHelperRegEx.BusinessLogic
             ManualSourceFilePath = Path.Combine(Application.StartupPath, @"Resources\" + "ManuallyShownTabs.xml");
             AutoDestFilePath = Path.Combine(ExeFilePath, "AutoShownTabs.xml");
             ManualDestFilePath = Path.Combine(ExeFilePath, "ManuallyShownTabs.xml");
+            MessageBox.Show("1 FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
             if (!Directory.Exists(ExeFilePath))
+            {
+                MessageBox.Show("2 FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
                 Directory.CreateDirectory(ExeFilePath);
+            }
+
             if (!File.Exists(AutoDestFilePath))
+            {
+                MessageBox.Show("3 FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
                 File.Copy(AutoSourceFilePath, AutoDestFilePath, true);
+            }
             else
+            {
+                MessageBox.Show("4 FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
                 MergeNewXmlWithOldXmlAuto();
+            }
+
             if (!File.Exists(ManualDestFilePath))
+            {
+                MessageBox.Show("5 FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
                 File.Copy(ManualSourceFilePath, ManualDestFilePath, true);
+            }
             else if (FirstRunEver) //If xml and file exists --> merge
             {
                 MessageBox.Show("merge FirstRunThisVersion=" + FirstRunThisVersion + " FirstRunEver=" + FirstRunEver);
                 MergeNewXmlWithOldXmlManual();
             }
-                
+            
         }
 
         public void MergeNewXmlWithOldXmlManual(bool userImportingFile = false)
