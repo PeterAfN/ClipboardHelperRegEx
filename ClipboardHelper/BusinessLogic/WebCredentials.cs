@@ -60,18 +60,18 @@ namespace ClipboardHelperRegEx.BusinessLogic
 
         public bool Saved()
         {
-            MessageBox.Show("1");
+            //MessageBox.Show("1");
             if (string.IsNullOrEmpty(Fqdn)) return false;
-            MessageBox.Show("2");
+            //MessageBox.Show("2");
             _cred = CredentialManager.GetCredentials(Fqdn);
-            MessageBox.Show("3");
+            //MessageBox.Show("3");
             if (_cred == null)
                 return false;
-            MessageBox.Show("4");
+            //MessageBox.Show("4");
             Usr = _cred.UserName;
             Pwd = _cred.SecurePassword;
             _dmn = _cred.Domain;
-            MessageBox.Show("5");
+            // MessageBox.Show("5");
             return true;
         }
 

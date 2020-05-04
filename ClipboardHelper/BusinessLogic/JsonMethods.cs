@@ -54,16 +54,17 @@ namespace ClipboardHelperRegEx.BusinessLogic
         //https://stackoverflow.com/questions/11118712/webclient-accessing-page-with-credentials
         public string Download(int timeout, string usr = "", SecureString psw = null)
         {
+            //System.Windows.Forms.MessageBox.Show("timeout=" + timeout + "usr=" + usr + "psw=" + psw.ToString());
             using (var client = new WebClient())
             {
                 if (!string.IsNullOrEmpty(usr))
                 {
-                    client.UseDefaultCredentials = false;
+                    client.UseDefaultCredentials = true;
                     Downloaded = DownloadJsonFromUrl(client, timeout, Url.ToString());
                     return Downloaded;
                 }
 
-                client.UseDefaultCredentials = true;
+                client.UseDefaultCredentials = false;
                 client.Credentials =
                     new NetworkCredential(usr, psw);
                 Downloaded = DownloadJsonFromUrl(client, timeout, Url.ToString());
