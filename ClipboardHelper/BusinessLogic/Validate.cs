@@ -117,7 +117,7 @@ namespace ClipboardHelperRegEx.BusinessLogic
                 MergeNewXmlWithOldXmlAuto();
             if (!File.Exists(ManualDestFilePath))
                 File.Copy(ManualSourceFilePath, ManualDestFilePath, true);
-            else //If xml and file exists --> merge
+            else if (FirstRunEver)//If xml and file exists --> merge
                 MergeNewXmlWithOldXmlManual();
         }
 
