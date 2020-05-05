@@ -508,7 +508,9 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                             _view.GroupBoxAuto.Text = t.Name;
                             try
                             {
-                                //if (_view.NavigationPositionAndId.Values.Count < _view.NavigationPosition)
+                                if (!(_view.NavigationPositionAndId.Values.Count < _view.NavigationPosition))
+                                    FillOneOrManyAutoOrManualListBoxesWithContent(LineChangeType.AutoMulti);
+                                else
                                     TransformLinesForOneListbox(_view.NavigationPosition, _view.NavigationPositionAndId.Values[_view.NavigationPosition], LineChangeType.AutoMulti, t.Items);
                             }
                             catch (Exception e)
@@ -530,8 +532,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                                     i);
                                 try
                                 {
-                                    //if (_view.NavigationPositionAndId.Values.Count < _view.NavigationPosition)
-                                        TransformLinesForOneListbox(_view.NavigationPosition, _view.NavigationPositionAndId.Values[_view.NavigationPosition], LineChangeType.ManualMulti,
+                                    TransformLinesForOneListbox(_view.NavigationPosition, _view.NavigationPositionAndId.Values[_view.NavigationPosition], LineChangeType.ManualMulti,
                                             _view.ManuallyShownTabsRam.List[i].Lines, i);
                                 }
                                 catch (Exception e)
