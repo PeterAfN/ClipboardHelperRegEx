@@ -136,9 +136,7 @@
 - Peter Palosaari
 
 ## Project status
-- No new features are developed at this point.
-- Considered beta.
-- Bugs are fixed.
+- Errors will be fixed.
 
 ## This program uses code from these projects:
 
