@@ -490,6 +490,8 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                 }
         }
 
+
+
         private void FillOneOrManyAutoOrManualListBoxesWithContent(LineChangeType lineChangeType)
         {
             switch (lineChangeType)
@@ -508,14 +510,15 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                             _view.GroupBoxAuto.Text = t.Name;
                             try
                             {
-                                if (!(_view.NavigationPositionAndId.Values.Count < _view.NavigationPosition))
-                                    FillOneOrManyAutoOrManualListBoxesWithContent(LineChangeType.AutoMulti);
-                                else
-                                    TransformLinesForOneListbox(_view.NavigationPosition, _view.NavigationPositionAndId.Values[_view.NavigationPosition], LineChangeType.AutoMulti, t.Items);
+                                TransformLinesForOneListbox(_view.NavigationPosition, _view.NavigationPositionAndId.Values[_view.NavigationPosition], LineChangeType.AutoMulti, t.Items);
                             }
                             catch (Exception e)
                             {
-                                MessageBox.Show("line 516: " +  e.Message);
+                                MessageBox.Show("line 516: " + e.Message + @"\r\n\r\" + "_view.NavigationPosition=" +
+                                                _view.NavigationPosition +
+                                                "_view.NavigationPositionAndId.Count=" +
+                                                _view.NavigationPositionAndId.Count);
+                                FillOneOrManyAutoOrManualListBoxesWithContent(LineChangeType.AutoMulti);
                             }
                         }
                     else _viewMain.LabelTitleTop.Text = string.Empty;
