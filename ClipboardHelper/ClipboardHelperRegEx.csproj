@@ -37,11 +37,11 @@
     <ProductName>ClipboardHelperRegEx</ProductName>
     <PublisherName>ClipboardHelperRegEx</PublisherName>
     <SuiteName>ClipboardHelperRegEx</SuiteName>
-    <MinimumRequiredVersion>0.0.0.26</MinimumRequiredVersion>
+    <MinimumRequiredVersion>0.0.0.27</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>26</ApplicationRevision>
-    <ApplicationVersion>0.0.0.26</ApplicationVersion>
+    <ApplicationRevision>27</ApplicationRevision>
+    <ApplicationVersion>0.0.0.27</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -90,7 +90,7 @@
     <StartupObject>ClipboardHelperRegEx.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>exe icon.ico</ApplicationIcon>
+    <ApplicationIcon>LogoNew.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AdysTech.CredentialManager, Version=1.9.1.0, Culture=neutral, PublicKeyToken=c7d7ee0c7449d0ff, processorArchitecture=MSIL">
@@ -405,6 +405,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="exe icon.ico" />
+    <Content Include="LogoNew.ico" />
     <Content Include="ManualXmlSchema.xsd">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -469,6 +470,7 @@
     <None Include="Resources\LeftArrowSelected.png" />
     <None Include="Resources\Locked.png" />
     <None Include="Resources\LockedSelected.png" />
+    <None Include="Resources\Logo.png" />
     <Content Include="Resources\macvendor.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -493,7 +495,6 @@
   <ItemGroup>
     <None Include="Resources\Help.txt" />
     <None Include="Resources\License.txt" />
-    <None Include="Resources\Logo.png" />
     <Content Include="Resources\ManuallyShownTabs.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
