@@ -188,7 +188,6 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                     _view.TriggerEventOnNewClipboardText(EventArgs.Empty); //Triggers event to show the app if hidden.
                     if (_view.TabControl.SelectedIndex != 0)
                         _view.TabControl.SelectedIndex = 0;
-                    FillOneOrManyAutoOrManualListBoxesWithContent(LineChangeType.AutoMulti);
                     if (!_viewMain.Visible)
                     {
                         if (!_settings.AppearanceFocus)
@@ -196,7 +195,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                         else
                             _viewMain.Show();
                     }
-
+                    FillOneOrManyAutoOrManualListBoxesWithContent(LineChangeType.AutoMulti);
                     if (!ListboxSelected.Focused)
                         ListboxSelected.Focus();
                 }
@@ -514,11 +513,11 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                             }
                             catch (Exception e)
                             {
-                                MessageBox.Show("line 516: " + e.Message + @"\r\n\r\" + "_view.NavigationPosition=" +
-                                                _view.NavigationPosition +
-                                                "_view.NavigationPositionAndId.Count=" +
-                                                _view.NavigationPositionAndId.Count);
-                                FillOneOrManyAutoOrManualListBoxesWithContent(LineChangeType.AutoMulti);
+                                MessageBox.Show("An error occured on line 516, PresenterMainSplContPanelUpTabs. The program will be restarted  : " + e.Message + @"\r\n\r\" + "_view.NavigationPosition=" +
+                                                _view.NavigationPosition + "_view.NavigationPositionAndId.Count=" +
+                                                _view.NavigationPositionAndId.Count, "Clipboard Helper RegEx error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                if (!Debugger.IsAttached)
+                                    Application.Restart();
                             }
                         }
                     else _viewMain.LabelTitleTop.Text = string.Empty;
