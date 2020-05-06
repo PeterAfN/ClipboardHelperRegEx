@@ -513,9 +513,14 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                             }
                             catch (Exception e)
                             {
-                                MessageBox.Show("An error occured on line 516, PresenterMainSplContPanelUpTabs. The program will be restarted  : " + e.Message + @"\r\n\r\" + "_view.NavigationPosition=" +
-                                                _view.NavigationPosition + "_view.NavigationPositionAndId.Count=" +
-                                                _view.NavigationPositionAndId.Count, "Clipboard Helper RegEx error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                string outData = "_view.NavigationPositionAndId.Values= \r\n\r\n";
+                                foreach (var variable in _view.NavigationPositionAndId.Values)
+                                {
+                                    outData += variable + "\r\n";
+                                }
+                                outData += _view.NavigationPosition;
+                                MessageBox.Show("An error occured on line 516, PresenterMainSplContPanelUpTabs. The program will be restarted  : " + e.Message + "\r\n" +
+                                                outData, "Clipboard Helper RegEx error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 if (!Debugger.IsAttached)
                                     Application.Restart();
                             }
