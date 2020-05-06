@@ -168,6 +168,8 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
             _listboxMultiSelection.HandleKeyUp(index);
         }
 
+        private static bool _blockNewClipboardUntilReady;
+
         private void Clipboard_Changed(object sender, EventArgs args)
         {
             //Thread Safe locker.
@@ -181,23 +183,29 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                     Tags.Cancel(); //Aborts filling lines (DelayedTags from web...)
                     if (_settings.AppearanceFocus) _viewMain.Activate();
                     if (!_settings.Activated) return;
-                    _history.AddAndRefreshIconStatus(History.UpdateMethod.NewValue,
-                        ViewMainSplContPanelUpTabs.ClipboardStored);
-                    _viewMainSplContPanelDown.PositionText = (_history.NavigationPosition - 1).ToString(System.Globalization.CultureInfo.InvariantCulture);
-                    _pasting.Cancel();
-                    _view.TriggerEventOnNewClipboardText(EventArgs.Empty); //Triggers event to show the app if hidden.
-                    if (_view.TabControl.SelectedIndex != 0)
-                        _view.TabControl.SelectedIndex = 0;
-                    if (!_viewMain.Visible)
-                    {
-                        if (!_settings.AppearanceFocus)
-                            _viewMain.ShowInactiveTopmost(_viewMain as Form);
-                        else
-                            _viewMain.Show();
-                    }
-                    FillOneOrManyAutoOrManualListBoxesWithContent(LineChangeType.AutoMulti);
-                    if (!ListboxSelected.Focused)
-                        ListboxSelected.Focus();
+                    _history.AddAndRefreshIconStatus(
+                            History.UpdateMethod.NewValue, // <---------------------------------
+                            ViewMainSplContPanelUpTabs.ClipboardStored);
+                        _viewMainSplContPanelDown.PositionText =
+                            (_history.NavigationPosition - 1).ToString(
+                                System.Globalization.CultureInfo.InvariantCulture);
+                        _pasting.Cancel();
+                        _view.TriggerEventOnNewClipboardText(EventArgs
+                            .Empty); //Triggers event to show the app if hidden.
+                        if (_view.TabControl.SelectedIndex != 0)
+                            _view.TabControl.SelectedIndex = 0;
+                        if (!_viewMain.Visible)
+                        {
+                            if (!_settings.AppearanceFocus)
+                                _viewMain.ShowInactiveTopmost(_viewMain as Form);
+                            else
+                                _viewMain.Show();
+                        }
+
+                        FillOneOrManyAutoOrManualListBoxesWithContent(LineChangeType
+                            .AutoMulti); // <---------------------------------
+                        if (!ListboxSelected.Focused)
+                            ListboxSelected.Focus();
                 }
                 else
                 {
@@ -489,7 +497,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                 }
         }
 
-
+        //public bool HasHistoryReturnedAndUpdatedPosition { get; set; }
 
         private void FillOneOrManyAutoOrManualListBoxesWithContent(LineChangeType lineChangeType)
         {
@@ -519,10 +527,11 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                                     outData += variable + "\r\n";
                                 }
                                 outData += _view.NavigationPosition;
-                                MessageBox.Show("An error occured on line 516, PresenterMainSplContPanelUpTabs. The program will be restarted  : " + e.Message + "\r\n" +
+                                MessageBox.Show("An error occured on line 516, PresenterMainSplContPanelUpTabs. The program will now try to fix the error : " + e.Message + "\r\n" +
                                                 outData, "Clipboard Helper RegEx error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                if (!Debugger.IsAttached)
-                                    Application.Restart();
+                                //if (!Debugger.IsAttached)
+                                //    Application.Restart();
+                                TransformLinesForOneListbox(_view.NavigationPosition, _view.NavigationPositionAndId.Values[_view.NavigationPosition-1], LineChangeType.AutoMulti, t.Items);
                             }
                         }
                     else _viewMain.LabelTitleTop.Text = string.Empty;
@@ -681,10 +690,10 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
             {
                 Monitor.Enter(Locker2, ref lockWasTaken);
 
-                Debug.WriteLine("_view.NavigationPosition=" + _view.NavigationPosition);
-                Debug.WriteLine("navigationPosition=" + navigationPosition);
-                Debug.WriteLine("_view.NavigationPositionAndId.Values[_view.NavigationPosition]=" + _view.NavigationPositionAndId.Values[_view.NavigationPosition]);
-                Debug.WriteLine("id=" + id);
+                //Debug.WriteLine("_view.NavigationPosition=" + _view.NavigationPosition);
+                //Debug.WriteLine("navigationPosition=" + navigationPosition);
+                //Debug.WriteLine("_view.NavigationPositionAndId.Values[_view.NavigationPosition]=" + _view.NavigationPositionAndId.Values[_view.NavigationPosition]);
+                //Debug.WriteLine("id=" + id);
 
                 if (_view.NavigationPosition != navigationPosition ||
                     _view.NavigationPositionAndId.Values[_view.NavigationPosition] != id)

@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace ClipboardHelperRegEx.BusinessLogic
 {
@@ -88,9 +91,10 @@ namespace ClipboardHelperRegEx.BusinessLogic
 
         private void HandleNewValue(string newValue)
         {
+            Thread.Sleep(1);
             var random = new Random();
             if (NavigationPosition != NavigationPositionAndId.Count)
-                RemoveRangeFromIndexToEnd(NavigationPosition);
+                    RemoveRangeFromIndexToEnd(NavigationPosition);
             NavigationPositionAndId.Add(NavigationPosition, random.Next(0, 10000));
             Values.RemoveRange(NavigationPosition, Values.Count - NavigationPosition); //truncate from index
             Values.Insert(NavigationPosition, newValue);
@@ -100,7 +104,7 @@ namespace ClipboardHelperRegEx.BusinessLogic
                 ActionOnRightEnabled(false);
             }
             NavigationPosition += 1;
-        }
+            }
 
         private void RemoveRangeFromIndexToEnd(int startIndex)
         {
