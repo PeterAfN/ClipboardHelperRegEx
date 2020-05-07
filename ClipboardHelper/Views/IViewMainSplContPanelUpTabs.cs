@@ -11,9 +11,6 @@ namespace ClipboardHelperRegEx.Views
     {
         MetroTabControl TabControl { get; }
 
-        int NavigationPosition { get; set; }
-        SortedList<int, int> NavigationPositionAndId { get; }
-
         GroupBox GroupBoxAuto { get; }
         Panel PanelChangeableContent { get; }
         TextBox TextBoxChangeableContent { get; }

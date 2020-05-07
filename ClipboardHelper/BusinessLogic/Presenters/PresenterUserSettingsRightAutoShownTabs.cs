@@ -394,7 +394,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                     var tags = new Tags();
                     var unused = new List<string>();
                     InitiateListbox(_view.ItemsList.Lines.Length);
-                    tags.TransformLines(_viewMainSplContPanelUpTabs.NavigationPosition, _viewMainSplContPanelUpTabs.NavigationPositionAndId.Values[_viewMainSplContPanelUpTabs.NavigationPosition],
+                    tags.TransformLines(-1, -1,  /*not relevant here*/
                         PresenterMainSplContPanelUpTabs.LineChangeType.AutoMulti,
                         0, //Note: only relevant with manual tags, not here.
                         _view.ItemsList.Lines.ToList(),

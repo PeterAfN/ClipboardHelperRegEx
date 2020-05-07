@@ -94,9 +94,6 @@ namespace ClipboardHelper.Views
             get { return textBoxChangeableContent; }
         }
 
-        public int NavigationPosition { get; set; }
-        public SortedList<int, int> NavigationPositionAndId { get; } = new SortedList<int, int>();
-
         public List<ModifiedListBox> ListBoxesManual { get; } = new List<ModifiedListBox>();
 
         public event EventHandler NewClipboardText;

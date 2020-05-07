@@ -103,9 +103,9 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
             Clipboard.Changed += Clipboard_Changed;
             _history = new History
             (
-                HistoryChanged,
+                WhenHistoryChangedLeftOrRightClick,
                 SetLeftHistoryIconStatus,
-                SetRightHistoryIconStatus, UpdateHistoryNavigationPosition
+                SetRightHistoryIconStatus
                 );
 
             //Make thing ready.           
@@ -116,8 +116,8 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
             CancelAndInitiateNewMultiSelectionAndUiNavigation();
 
 
-            _history.AddAndRefreshIconStatus(History.UpdateMethod.NewValue,
-                "initialDummy");
+            //_history.AddAndRefreshIconStatus(History.UpdateMethod.NewValue,
+            //    "initialDummy");
 
 
             FillOneOrManyAutoOrManualListBoxesWithContent(LineChangeType.ManualMulti);
@@ -184,10 +184,10 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                     if (_settings.AppearanceFocus) _viewMain.Activate();
                     if (!_settings.Activated) return;
                     _history.AddAndRefreshIconStatus(
-                            History.UpdateMethod.NewValue, // <---------------------------------
+                            History.UpdateMethod.NewValue,
                             ViewMainSplContPanelUpTabs.ClipboardStored);
                         _viewMainSplContPanelDown.PositionText =
-                            (_history.NavigationPosition - 1).ToString(
+                            (_history.NavigationPosition + 1).ToString(
                                 System.Globalization.CultureInfo.InvariantCulture);
                         _pasting.Cancel();
                         _view.TriggerEventOnNewClipboardText(EventArgs
@@ -202,8 +202,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                                 _viewMain.Show();
                         }
 
-                        FillOneOrManyAutoOrManualListBoxesWithContent(LineChangeType
-                            .AutoMulti); // <---------------------------------
+                        FillOneOrManyAutoOrManualListBoxesWithContent(LineChangeType.AutoMulti);
                         if (!ListboxSelected.Focused)
                             ListboxSelected.Focus();
                 }
@@ -515,30 +514,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                                 t.RegEx)) continue;
                             MakeSpecificListboxReady(t.Items.Count, LineChangeType.AutoMulti);
                             _view.GroupBoxAuto.Text = t.Name;
-                            try
-                            {
-                                if (_view.NavigationPositionAndId.Values.Count > _view.NavigationPosition)
-                                    TransformLinesForOneListbox(_view.NavigationPosition, _view.NavigationPositionAndId.Values[_view.NavigationPosition], LineChangeType.AutoMulti, t.Items);
-                                else
-                                {
-                                    MessageBox.Show("An error occured on line 524, The program will now try to fix the error and resume");
-                                    TransformLinesForOneListbox(_view.NavigationPosition, _view.NavigationPositionAndId.Values[_view.NavigationPosition-1], LineChangeType.AutoMulti, t.Items);
-                                }
-                            }
-                            catch (Exception e)
-                            {
-                                string outData = "_view.NavigationPositionAndId.Values= \r\n\r\n";
-                                foreach (var variable in _view.NavigationPositionAndId.Values)
-                                {
-                                    outData += variable + "\r\n";
-                                }
-                                outData += _view.NavigationPosition;
-                                MessageBox.Show("An error occured on line 535, PresenterMainSplContPanelUpTabs. The program will now try to fix the error : " + e.Message + "\r\n" +
-                                                outData, "Clipboard Helper RegEx error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                //if (!Debugger.IsAttached)
-                                //    Application.Restart();
-                                TransformLinesForOneListbox(_view.NavigationPosition, _view.NavigationPositionAndId.Values[_view.NavigationPosition-1], LineChangeType.AutoMulti, t.Items);
-                            }
+                            TransformLinesForOneListbox(_history.NavigationPosition, _history.NavigationPositionAndId.Values[_history.NavigationPosition], LineChangeType.AutoMulti, t.Items);
                         }
                     else _viewMain.LabelTitleTop.Text = string.Empty;
 
@@ -552,15 +528,8 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                                         .Lines.Count,
                                     LineChangeType.ManualMulti,
                                     i);
-                                try
-                                {
-                                    TransformLinesForOneListbox(_view.NavigationPosition, _view.NavigationPositionAndId.Values[_view.NavigationPosition], LineChangeType.ManualMulti,
+                                TransformLinesForOneListbox(-1, -1, LineChangeType.ManualMulti, /* 666 not relevant */
                                             _view.ManuallyShownTabsRam.List[i].Lines, i);
-                                }
-                                catch (Exception e)
-                                {
-                                    MessageBox.Show("line 541: " + e.Message);
-                                }
                             }
                     break;
                 case LineChangeType.AutoSingle:
@@ -701,8 +670,9 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                 //Debug.WriteLine("_view.NavigationPositionAndId.Values[_view.NavigationPosition]=" + _view.NavigationPositionAndId.Values[_view.NavigationPosition]);
                 //Debug.WriteLine("id=" + id);
 
-                if (_view.NavigationPosition != navigationPosition ||
-                    _view.NavigationPositionAndId.Values[_view.NavigationPosition] != id)
+                if (!(navigationPosition == -1 && id == -1))
+                if (_history.NavigationPosition != navigationPosition ||
+                    _history.NavigationPositionAndId.Values[_history.NavigationPosition] != id)
                 {
                     Debug.WriteLine("returning overstepping");
                     return;
@@ -818,8 +788,8 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
             var tags = new Tags();
             //Async Task so that HasChangeableContentChangeFinished can change to true.
             await Task.Run(() => tags.TransformLines(
-                _view.NavigationPosition,
-                _view.NavigationPositionAndId.Values[_view.NavigationPosition],
+                _history.NavigationPosition,
+                _history.NavigationPositionAndId.Values[_history.NavigationPosition],
                 LineChangeType.AutoMulti,
                 0, //note: relevant only for manual pasting!
                 ListboxSelected.Items.Cast<string>().ToList(),
@@ -837,24 +807,6 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                 _keyPressedChangeable = true;
             else
                 e.Handled = true;
-        }
-
-        //is updated from the History class
-        private void UpdateHistoryNavigationPosition(int position, int id)
-        {
-            if (position >= _view.NavigationPosition)
-                switch (_whichHistoryIconClicked)
-                {
-                    case WhichHistoryIconClicked.Right:
-                        if (!_view.NavigationPositionAndId.ContainsKey(position))
-                            _view.NavigationPositionAndId.Add(position, id);
-                        break;
-                    case WhichHistoryIconClicked.Left:
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException(nameof(position));
-                }
-            _view.NavigationPosition = position;
         }
 
         private enum WhichHistoryIconClicked
@@ -895,18 +847,18 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
         /// <summary>
         /// Called by action from the History class - HandleLeftClick() - HandleRightClick
         /// </summary>
-        private void HistoryChanged()
+        private void WhenHistoryChangedLeftOrRightClick()
         {
-            ViewMainSplContPanelUpTabs.ClipboardStored = _history.Values[_history.NavigationPosition - 1];
+            ViewMainSplContPanelUpTabs.ClipboardStored = _history.Values[_history.NavigationPosition];
             _pasting.Cancel();
-            _viewMainSplContPanelDown.PositionText = (_history.NavigationPosition - 1).ToString(System.Globalization.CultureInfo.InvariantCulture);
+            _viewMainSplContPanelDown.PositionText = (_history.NavigationPosition + 1).ToString(System.Globalization.CultureInfo.InvariantCulture);
             switch (_whichHistoryIconClicked)
             {
                 case WhichHistoryIconClicked.Right:
                     FillOneOrManyAutoOrManualListBoxesWithContent(LineChangeType.AutoMulti);
                     break;
                 case WhichHistoryIconClicked.Left:
-                    FillOneOrManyAutoOrManualListBoxesWithContent((_history.NavigationPosition - 1) == 0
+                    FillOneOrManyAutoOrManualListBoxesWithContent((_history.NavigationPosition + 1) == 0
                         ? LineChangeType.None
                         : LineChangeType.AutoMulti);
                     break;

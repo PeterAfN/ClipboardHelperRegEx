@@ -8,8 +8,6 @@ namespace ClipboardHelperRegEx.BusinessLogic
 {
     public class History
     {
-        private int _navigationPosition;
-
         public enum UpdateMethod
         {
             LeftClick,
@@ -21,37 +19,23 @@ namespace ClipboardHelperRegEx.BusinessLogic
         (
             Action actionOnHistoryChanged,
             Action<bool> actionOnLeftEnabled,
-            Action<bool> actionOnRightEnabled,
-            Action<int, int> actionMirrorNavigationPosition
+            Action<bool> actionOnRightEnabled
         )
         {
             ActionOnHistoryChanged = actionOnHistoryChanged;
             ActionOnLeftEnabled = actionOnLeftEnabled;
             ActionOnRightEnabled = actionOnRightEnabled;
-            ActionMirrorNavigationPosition = actionMirrorNavigationPosition;
         }
 
         public List<string> Values { get; } = new List<string>();
 
-        public int NavigationPosition
-        {
-            get { return _navigationPosition; }
-            private set
-            {
-                if (NavigationPosition > value)
-                    ActionMirrorNavigationPosition(NavigationPosition - 2, NavigationPositionAndId.Values[NavigationPosition - 2]);
-                else
-                    ActionMirrorNavigationPosition(NavigationPosition, NavigationPositionAndId.Values[NavigationPosition]);
-                _navigationPosition = value;
-            }
-        }
+        public int NavigationPosition { get; private set; } = -1;
 
-        private SortedList<int, int> NavigationPositionAndId { get; } = new SortedList<int, int>();
+        public SortedList<int, int> NavigationPositionAndId { get; } = new SortedList<int, int>();
 
         private Action ActionOnHistoryChanged { get; }
         private Action<bool> ActionOnLeftEnabled { get; }
         private Action<bool> ActionOnRightEnabled { get; }
-        private Action<int, int> ActionMirrorNavigationPosition { get; }
 
         public void AddAndRefreshIconStatus(UpdateMethod updateMethods, string newValue = "")
         {
@@ -74,7 +58,7 @@ namespace ClipboardHelperRegEx.BusinessLogic
         private void HandleLeftClick()
         {
             ActionOnRightEnabled(true);
-            if (NavigationPosition == 2)
+            if (NavigationPosition == 1)
                 ActionOnLeftEnabled(false);
             NavigationPosition -= 1;
             ActionOnHistoryChanged();
@@ -83,7 +67,7 @@ namespace ClipboardHelperRegEx.BusinessLogic
         private void HandleRightClick()
         {
             ActionOnLeftEnabled(true);
-            if (NavigationPosition == Values.Count - 1)
+            if (NavigationPosition == Values.Count - 2)
                 ActionOnRightEnabled(false);
             NavigationPosition += 1;
             ActionOnHistoryChanged();
@@ -91,9 +75,10 @@ namespace ClipboardHelperRegEx.BusinessLogic
 
         private void HandleNewValue(string newValue)
         {
-            Thread.Sleep(1);
+            NavigationPosition += 1;
             var random = new Random();
-            if (NavigationPosition != NavigationPositionAndId.Count)
+            if (NavigationPosition != -1)
+                if (NavigationPosition != NavigationPositionAndId.Count)
                     RemoveRangeFromIndexToEnd(NavigationPosition);
             NavigationPositionAndId.Add(NavigationPosition, random.Next(0, 10000));
             Values.RemoveRange(NavigationPosition, Values.Count - NavigationPosition); //truncate from index
@@ -103,7 +88,7 @@ namespace ClipboardHelperRegEx.BusinessLogic
                 ActionOnLeftEnabled(true);
                 ActionOnRightEnabled(false);
             }
-            NavigationPosition += 1;
+            
             }
 
         private void RemoveRangeFromIndexToEnd(int startIndex)
