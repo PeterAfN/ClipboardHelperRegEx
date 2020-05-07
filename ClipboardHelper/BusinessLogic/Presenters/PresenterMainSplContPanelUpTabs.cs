@@ -517,7 +517,13 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                             _view.GroupBoxAuto.Text = t.Name;
                             try
                             {
-                                TransformLinesForOneListbox(_view.NavigationPosition, _view.NavigationPositionAndId.Values[_view.NavigationPosition], LineChangeType.AutoMulti, t.Items);
+                                if (_view.NavigationPositionAndId.Values.Count > _view.NavigationPosition)
+                                    TransformLinesForOneListbox(_view.NavigationPosition, _view.NavigationPositionAndId.Values[_view.NavigationPosition], LineChangeType.AutoMulti, t.Items);
+                                else
+                                {
+                                    MessageBox.Show("An error occured on line 524, The program will now try to fix the error and resume");
+                                    TransformLinesForOneListbox(_view.NavigationPosition, _view.NavigationPositionAndId.Values[_view.NavigationPosition-1], LineChangeType.AutoMulti, t.Items);
+                                }
                             }
                             catch (Exception e)
                             {
@@ -527,7 +533,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                                     outData += variable + "\r\n";
                                 }
                                 outData += _view.NavigationPosition;
-                                MessageBox.Show("An error occured on line 516, PresenterMainSplContPanelUpTabs. The program will now try to fix the error : " + e.Message + "\r\n" +
+                                MessageBox.Show("An error occured on line 535, PresenterMainSplContPanelUpTabs. The program will now try to fix the error : " + e.Message + "\r\n" +
                                                 outData, "Clipboard Helper RegEx error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 //if (!Debugger.IsAttached)
                                 //    Application.Restart();
