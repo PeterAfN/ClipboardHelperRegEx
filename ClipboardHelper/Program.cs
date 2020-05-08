@@ -193,9 +193,9 @@ namespace ClipboardHelperRegEx
             var listOfProc = Process.GetProcessesByName(currentRunningProcess.ProcessName);
             foreach (var proc in listOfProc)
             {
-                if ((Path.GetFileNameWithoutExtension(proc.MainModule?.FileName) ==
-                     Path.GetFileNameWithoutExtension(currentRunningProcess.MainModule?.FileName) &&
-                     (proc.Id != currentRunningProcess.Id)))
+                if (Path.GetFileNameWithoutExtension(proc.MainModule?.FileName) ==
+                     Path.GetFileNameWithoutExtension(currentRunningProcess.MainModule?.FileName)) /*&&*/
+                     //(proc.Id != currentRunningProcess.Id)))
                     return true;
             }
             return false;
