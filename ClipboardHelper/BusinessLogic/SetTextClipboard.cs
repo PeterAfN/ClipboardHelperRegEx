@@ -1,4 +1,8 @@
 ﻿using System.Threading;
+using System.Windows.Forms;
+using ClipboardHelperRegEx.Properties;
+using System.Windows.Interop;
+using System;
 
 namespace ClipboardHelperRegEx.BusinessLogic
 {
@@ -21,17 +25,29 @@ namespace ClipboardHelperRegEx.BusinessLogic
                 System.Windows.Forms.Clipboard.SetDataObject(
                     text, // Text to store in clipboard
                     true, // Do not keep after our application exits
-                    20, // Retry 20 times
-                    200); // 200 ms delay between retries
+                    5, // Retry 5 times
+                    100); // 100 ms delay between retries
             }
-            //catch
-            //{
-            //    MessageBox.Show(Resources.SetTextClipboard_SetText_Windows_Clipboard_could_not_set_text_, Resources.SetTextClipboard_SetText_Clipboard_Helper_information,
-            //        MessageBoxButtons.OK);
-            //}
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "\r\n\r\nClipboard Helper RegEx could not access the Clipboard. The program will try to again.");
+                try
+                {
+                    NativeMethods.CloseClipboard();
+                    System.Windows.Forms.Clipboard.SetDataObject(
+                        text, // Text to store in clipboard
+                        true, // Do not keep after our application exits
+                        5, // Retry 5 times
+                        100); // 100 ms delay between retries
+                }
+                catch (Exception e2)
+                {
+                    MessageBox.Show(e2.ToString() + "\r\n\r\nThe retry failed.");
+                    //throw;
+                }
+            }
             finally
             {
-
                 if (lockWasTaken) Monitor.Exit(LockerClipboardSet);
             }
         }

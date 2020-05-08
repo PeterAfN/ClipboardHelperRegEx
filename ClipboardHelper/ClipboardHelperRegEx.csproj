@@ -37,11 +37,11 @@
     <ProductName>ClipboardHelperRegEx</ProductName>
     <PublisherName>ClipboardHelperRegEx</PublisherName>
     <SuiteName>ClipboardHelperRegEx</SuiteName>
-    <MinimumRequiredVersion>0.0.0.31</MinimumRequiredVersion>
+    <MinimumRequiredVersion>0.0.0.32</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>31</ApplicationRevision>
-    <ApplicationVersion>0.0.0.31</ApplicationVersion>
+    <ApplicationRevision>32</ApplicationRevision>
+    <ApplicationVersion>0.0.0.32</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>

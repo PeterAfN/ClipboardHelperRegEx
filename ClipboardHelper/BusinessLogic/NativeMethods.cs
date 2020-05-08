@@ -30,6 +30,7 @@ namespace ClipboardHelperRegEx.BusinessLogic
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool RemoveClipboardFormatListener(IntPtr hwnd);
 
+
         #region Win32
 
         //https://stackoverflow.com/questions/33003958/getting-byte-from-getclipboarddata-native-method
