@@ -3,6 +3,8 @@ using ClipboardHelperRegEx.BusinessLogic;
 using ClipboardHelperRegEx.BusinessLogic.Presenters;
 using ClipboardHelperRegEx.Properties;
 using System;
+using System.Diagnostics;
+using System.IO;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
@@ -21,7 +23,14 @@ namespace ClipboardHelperRegEx
         {
             Validate.CheckIfFirstTimeRunning();
 
-            if (IsAnotherInstanceOfThisProgramRunning(Assembly.GetEntryAssembly()?.GetName().Name)) return;
+            if (IsAnotherInstanceOfThisProgramRunning(Assembly.GetEntryAssembly()?.GetName().Name))
+            {
+                MessageBox.Show(
+                    Resources.Program_Main_Only_one_instance_of_Clipboard_Helper_RegEx_can_be_running_at_the_same_time__This_instance_will_be_closed_,
+                    "Clipboard Helper RegEx", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
 
             Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
             AppDomain.CurrentDomain.UnhandledException += CurrentDomainOnUnhandledException;
@@ -177,17 +186,20 @@ namespace ClipboardHelperRegEx
             MessageBox.Show(message, Resources.Program_CurrentDomainOnUnhandledException);
         }
 
+
         private static bool IsAnotherInstanceOfThisProgramRunning(string programName)
         {
-            var mutex = new Mutex(false, programName);
-            try
+            var currentRunningProcess = Process.GetCurrentProcess();
+            var listOfProc = Process.GetProcessesByName(currentRunningProcess.ProcessName);
+            foreach (var proc in listOfProc)
             {
-                return !mutex.WaitOne(0, false);
+                if ((Path.GetFileNameWithoutExtension(proc.MainModule?.FileName) ==
+                     Path.GetFileNameWithoutExtension(currentRunningProcess.MainModule?.FileName) &&
+                     (proc.Id != currentRunningProcess.Id)))
+                    return true;
             }
-            finally
-            {
-                mutex.Close();
-            }
+            return false;
         }
+
     }
 }

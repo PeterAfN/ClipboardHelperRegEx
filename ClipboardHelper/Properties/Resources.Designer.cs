@@ -1111,6 +1111,16 @@ namespace ClipboardHelperRegEx.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Only one instance of Clipboard Helper RegEx can be running at the same time. This instance will be closed..
+        /// </summary>
+        public static string Program_Main_Only_one_instance_of_Clipboard_Helper_RegEx_can_be_running_at_the_same_time__This_instance_will_be_closed_ {
+            get {
+                return ResourceManager.GetString("Program_Main_Only_one_instance_of_Clipboard_Helper_RegEx_can_be_running_at_the_sa" +
+                        "me_time__This_instance_will_be_closed_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You cannot run more than one instance of this application..
         /// </summary>
         public static string Program_Main_You_cannot_run_more_than_one_instance_of_this_application_ {
