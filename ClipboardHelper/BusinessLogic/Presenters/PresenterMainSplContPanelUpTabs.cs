@@ -285,10 +285,9 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
             switch (e.PropertyName)
             {
                 case "AutoShownTabs":
+                case "ManuallyShownTabs":
                     FillOneOrManyAutoOrManualListBoxesWithContent(LineChangeType.AutoMulti);
                     if (_view != null) _view.AutoShownTabsRam = _settingsXml.AutoShownTabs;
-                    break;
-                case "ManuallyShownTabs":
                     FillOneOrManyAutoOrManualListBoxesWithContent(LineChangeType.ManualMulti);
                     if (_view != null) _view.ManuallyShownTabsRam = _settingsXml.ManuallyShownTabs;
                     break;
@@ -308,40 +307,39 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                 Pasting_MultiPastingDeactivated(sender, PastingDeactivatedEventArgs.Empty);
             _pasting?.Cancel();
             ListboxSelected = null;
-            //if (_view.TabControl.SelectedIndex != -1)
-                if (_view.TabControl.SelectedIndex == 0)
+            if (_view.TabControl.SelectedIndex == 0)
+            {
+                if (_listBoxAuto != null)
                 {
-                    if (_listBoxAuto != null)
-                    {
-                        _listBoxAuto.ClearSelected();
-                        ListboxSelected = _listBoxAuto;
-                        _uiKeyNavigation.Cancel();
-                        _uiKeyNavigation = null;
-                        _uiKeyNavigation = new UIKeyNavigation(ListboxSelected, _view.TabControl);
-                        ListboxSelected.Focus();
-                    }
-
-                    _viewMainSplContPanelDown.HistoryLeft.Visible = _historyLeftVisible;
-                    _viewMainSplContPanelDown.HistoryRight.Visible = _historyRightVisible;
-                    _viewMainSplContPanelDown.Position.Visible = true;
+                    _listBoxAuto.ClearSelected();
+                    ListboxSelected = _listBoxAuto;
+                    _uiKeyNavigation.Cancel();
+                    _uiKeyNavigation = null;
+                    _uiKeyNavigation = new UIKeyNavigation(ListboxSelected, _view.TabControl);
+                    ListboxSelected.Focus();
                 }
-                else
+
+                _viewMainSplContPanelDown.HistoryLeft.Visible = _historyLeftVisible;
+                _viewMainSplContPanelDown.HistoryRight.Visible = _historyRightVisible;
+                _viewMainSplContPanelDown.Position.Visible = true;
+            }
+            else
+            {
+                if (_view.ListBoxesManual.Count != 0)
                 {
-                    if (_view.ListBoxesManual.Count != 0)
-                    {
-                        ListboxSelected = _view.ListBoxesManual[_view.TabControl.SelectedIndex - 1];
-                        _uiKeyNavigation.Cancel();
-                        _uiKeyNavigation = null;
-                        _uiKeyNavigation = new UIKeyNavigation(ListboxSelected, _view.TabControl);
-                        ListboxSelected.Focus();
-                        if (_view.ListBoxesManual[_view.TabControl.SelectedIndex - 1].SelectedItems.Count > 0)
-                            _view.ListBoxesManual[_view.TabControl.SelectedIndex - 1]?.ClearSelected();
-                    }
-
-                    _viewMainSplContPanelDown.HistoryLeft.Visible = false;
-                    _viewMainSplContPanelDown.HistoryRight.Visible = false;
-                    _viewMainSplContPanelDown.Position.Visible = false;
+                    ListboxSelected = _view.ListBoxesManual[_view.TabControl.SelectedIndex - 1];
+                    _uiKeyNavigation.Cancel();
+                    _uiKeyNavigation = null;
+                    _uiKeyNavigation = new UIKeyNavigation(ListboxSelected, _view.TabControl);
+                    ListboxSelected.Focus();
+                    if (_view.ListBoxesManual[_view.TabControl.SelectedIndex - 1].SelectedItems.Count > 0)
+                        _view.ListBoxesManual[_view.TabControl.SelectedIndex - 1]?.ClearSelected();
                 }
+
+                _viewMainSplContPanelDown.HistoryLeft.Visible = false;
+                _viewMainSplContPanelDown.HistoryRight.Visible = false;
+                _viewMainSplContPanelDown.Position.Visible = false;
+            }
 
             CancelAndInitiateNewMultiSelectionAndUiNavigation();
             SubscribeToEvents();

@@ -227,10 +227,8 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                             //MessageBox.Show("ValidateXml.Passed=" + ValidateXml.Passed);
                             if (ValidateXml.Passed)
                             {
-                                //MessageBox.Show("_fileName=" + _fileName);
-                                //MessageBox.Show("_destFilePath=" + _destFilePath);
                                 File.Copy(_fileName, _destFilePath, true);
-                                UpdateAutoTab();
+                                UpdateAutoTabInUserSettings();
                                 _settingsServiceXmlSerialization.AutoShownTabs =
                                     _settingsServiceXmlSerialization.AutoShownTabs; //To trigger ( PresenterMainSplContPanelUpTabs.SettingsServiceXmlSerialization_PropertyChanged) when new values
                             }
@@ -240,10 +238,8 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                             _ = new ValidateXml(_fileName, ValidateXml.XmlType.Manual);
                             if (ValidateXml.Passed)
                             {
-                                //MessageBox.Show("_fileName=" + _fileName);
-                                //MessageBox.Show("_destFilePath=" + _destFilePath);
                                 File.Copy(_fileName, _destFilePath, true);
-                                UpdateManualTab();
+                                UpdateManualTabInUserSettings();
                                 _settingsServiceXmlSerialization.ManuallyShownTabs =
                                     _settingsServiceXmlSerialization.ManuallyShownTabs; //To trigger ( PresenterMainSplContPanelUpTabs.SettingsServiceXmlSerialization_PropertyChanged) when new values
                             }
@@ -259,7 +255,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
             }
         }
 
-        private void UpdateManualTab()
+        private void UpdateManualTabInUserSettings()
         {
             _validate.MergeNewXmlWithOldXmlManual(true);
             if (!_rightManuallyShownTabs.Loaded) return;
@@ -268,7 +264,7 @@ namespace ClipboardHelperRegEx.BusinessLogic.Presenters
                 _rightManuallyShownTabs.ListLeft.Items.Add(element.Name);
         }
 
-        private void UpdateAutoTab()
+        private void UpdateAutoTabInUserSettings()
         {
             _validate.MergeNewXmlWithOldXmlAuto(true);
             if (!_rightAutoShownTabs.Loaded) return;
