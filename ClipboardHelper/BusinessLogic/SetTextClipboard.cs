@@ -22,29 +22,30 @@ namespace ClipboardHelperRegEx.BusinessLogic
             try
             {
                 Monitor.Enter(LockerClipboardSet, ref lockWasTaken);
-                System.Windows.Forms.Clipboard.SetDataObject(
-                    text, // Text to store in clipboard
-                    true, // Do not keep after our application exits
-                    1, 
-                    100); // 100 ms delay between retries
+                System.Windows.Forms.Clipboard.SetText(text);/* SetDataObject(*/
+                    //text, // Text to store in clipboard
+                    //true, // Do not keep after our application exits
+                    //1, 
+                    //100); // 100 ms delay between retries
             }
             catch (Exception e)
             {
+                //question is whether setting to clipboard succeeds even if there is an exception.
                 //MessageBox.Show(e + "\r\n\r\nClipboard Helper RegEx could not access the Clipboard. The program will try to again.");
-                try
-                {
-                    NativeMethods.CloseClipboard();
-                    System.Windows.Forms.Clipboard.SetDataObject(
-                        text, // Text to store in clipboard
-                        true, // Do not keep after our application exits
-                        5, // Retry 5 times
-                        100); // 100 ms delay between retries
-                }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString() + "\r\n\r\nThe retry failed.");
-                    //throw;
-                }
+                //try
+                //{
+                //    NativeMethods.CloseClipboard();
+                //    System.Windows.Forms.Clipboard.SetDataObject(
+                //        text, // Text to store in clipboard
+                //        true, // Do not keep after our application exits
+                //        5, // Retry 5 times
+                //        100); // 100 ms delay between retries
+                //}
+                //catch (Exception e2)
+                //{
+                //    MessageBox.Show(e2.ToString() + "\r\n\r\nThe retry failed.");
+                //    //throw;
+                //}
             }
             finally
             {
