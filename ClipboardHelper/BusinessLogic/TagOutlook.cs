@@ -70,11 +70,19 @@ namespace ClipboardHelperRegEx.BusinessLogic
             var hWnd = NativeMethods.FindWindow("rctrl_renwnd32", null);
             if (hWnd.Equals(IntPtr.Zero)) return;
 
-            var hWndChild1 = NativeMethods.FindWindowEx(hWnd, IntPtr.Zero, "AfxWndW", "FolderBar");
+            var hWndChild1 = NativeMethods.FindWindowEx(hWnd, IntPtr.Zero, "MsoCommandBarDock", "MsoDockTop");
             if (hWndChild1.Equals(IntPtr.Zero)) return;
 
+            var hWndChild1A =
+                NativeMethods.FindWindowEx(hWndChild1, IntPtr.Zero, "MsoCommandBar", "Ribbon");
+            if (hWndChild1A.Equals(IntPtr.Zero)) return;
+
+            var hWndChild1B =
+                NativeMethods.FindWindowEx(hWndChild1A, IntPtr.Zero, "MsoWorkPane", "Ribbon");
+            if (hWndChild1B.Equals(IntPtr.Zero)) return;
+
             var hWndChild2 =
-                NativeMethods.FindWindowEx(hWndChild1, IntPtr.Zero, "NetUINativeHWNDHost", "NUIDocumentWindow");
+                NativeMethods.FindWindowEx(hWndChild1B, IntPtr.Zero, "NUIPane", "");
             if (hWndChild2.Equals(IntPtr.Zero)) return;
 
             var hWndChild3 = NativeMethods.FindWindowEx(hWndChild2, IntPtr.Zero, "NetUIHWND", "");
