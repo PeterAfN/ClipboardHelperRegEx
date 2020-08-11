@@ -60,7 +60,7 @@ namespace ClipboardHelperRegEx.BusinessLogic
                 "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
             var startPath =
                 Environment.GetFolderPath(Environment.SpecialFolder.Programs)
-                + @"\ClipboardHelperRegEx\ClipboardHelperRegEx.appref-ms";
+                + @"\ClipboardHelperRegEx\ClipboardHelperRegEx\ClipboardHelperRegEx.appref-ms";
             if (Settings.Default.appearanceAutostart)
                 rkApp?.SetValue("ClipboardHelperRegEx.exe", startPath);
             else
