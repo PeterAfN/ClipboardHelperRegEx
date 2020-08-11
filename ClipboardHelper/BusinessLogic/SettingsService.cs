@@ -17,7 +17,11 @@ namespace ClipboardHelperRegEx.BusinessLogic
             if (Validate.FirstRunEver)
                 SaveFormLowerRightScreenPositionToSettings();
             if (Validate.FirstRunThisVersion)
+            {
+                FixForRemovingOldVersionAutoStartup();
                 ApplyProgramAutoStartSettingToRegistry();
+            }
+
             if (!IsVisibleOnAnyScreen(new Rectangle(Settings.Default.location, Settings.Default.sizeMain))) //Check if the amount of physical screens has changed and the form is now outside the desktop, unreachable. If so, reset position
                 SaveFormLowerRightScreenPositionToSettings();
         }
@@ -52,15 +56,26 @@ namespace ClipboardHelperRegEx.BusinessLogic
         /// </summary>
         public static void ApplyProgramAutoStartSettingToRegistry()
         {
-            var rkApp = Registry.CurrentUser.OpenSubKey(
+            var rkApp = Registry.CurrentUser. OpenSubKey(
                 "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
             var startPath =
                 Environment.GetFolderPath(Environment.SpecialFolder.Programs)
-                + @"\ClipboardHelper\ClipboardHelper.appref-ms";
+                + @"\ClipboardHelperRegEx\ClipboardHelperRegEx.appref-ms";
             if (Settings.Default.appearanceAutostart)
-                rkApp?.SetValue("ClipboardHelper.exe", startPath);
+                rkApp?.SetValue("ClipboardHelperRegEx.exe", startPath);
             else
-                rkApp?.DeleteValue("ClipboardHelper.exe", false);
+                rkApp?.DeleteValue("ClipboardHelperRegEx.exe", false);
+        }
+
+        private static void FixForRemovingOldVersionAutoStartup()
+        {
+            var rkAppOld = Registry.CurrentUser.OpenSubKey(
+                "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            if (rkAppOld.GetValue("ClipboardHelper.exe") != null)
+            {
+                rkAppOld?.DeleteValue("ClipboardHelper.exe", false);
+            }
+
         }
 
         private static bool IsVisibleOnAnyScreen(Rectangle rect)
